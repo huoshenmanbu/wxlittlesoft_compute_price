@@ -39,12 +39,12 @@
   </view>
 
   <view class="button">
-            <button calss="button_compute" type="default" size="default" 
-                    loading="false" plain="false" bindtap="button_compute"
+            <button calss="button_compute" type="primary" size="default" 
+                      bindtap="button_compute"
                     hover-class="hoverbutton">计算成本 </button>
 
-            <button calss="button_clear" type="default" size="default" 
-                    loading="false" plain="false" bindtap="button_clear"
+            <button calss="button_clear" type="primary" size="default" 
+                    bindtap="button_clear"
                     hover-class="hoverbutton">清除结果</button>
         </view>
 

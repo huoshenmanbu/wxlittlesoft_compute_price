@@ -33,16 +33,22 @@
 
 
 
-.buttonstyle{
-  display: flex;
-  flex-direction: row;
-  padding-top: 20px;
+.button{
+  /* display: flex;
+  flex-direction: column;
+  padding-top: 20px; */
 }
 
-.con-button{
-  color: black;
-  background-color: lightgreen;
-  margin-bottom: 5px;
+.button_compute{
+  /* color: black; */
+  background-color: green;
+  margin-bottom: 30rpx;
+}
+
+.button_clear{
+  /* color: black; */
+  background-color: green;
+  margin-bottom: 5rpx;
 }
 
 .hoverbutton{
