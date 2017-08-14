@@ -1,0 +1,54 @@
+<!--index.wxml-->
+<view class="container">
+  
+  <view class="logo">
+    <image class="logo_image" src="../image/logo.jpg" 
+         background-size="cover" mode="scaleToFill"/>
+  </view>
+  <view class="input">
+    <text calss="input-hint">*请输入价格：</text>
+    <input name="input-price" class="input-price"/>
+  </view>
+
+  <view style="display:flex">
+      <text class="condition_one">条件一：</text>
+      <picker mode="selector" range="{{array_one}}" value="{{index}}" bindchange="listenerPickerSelected_one">
+         <text>{{array_one[index]}}</text>
+      </picker>
+  </view>
+
+  <view style="display:flex">
+      <text class="condition_two">条件二：</text>
+      <picker mode="selector" range="{{array_two}}" value="{{index}}" bindchange="listenerPickerSelected_two">
+         <text>{{array_two[index]}}</text>
+      </picker>
+  </view>
+
+  <view style="display:flex">
+      <text class="condition_three">条件三：</text>
+      <picker mode="selector" range="{{array_three}}" value="{{index}}" bindchange="listenerPickerSelected_three">
+         <text>{{array_three[index]}}</text>
+      </picker>
+  </view>
+
+  <view style="display:flex">
+      <text class="condition_four">条件四：</text>
+      <picker mode="selector" range="{{array_four}}" value="{{index}}" bindchange="listenerPickerSelected_four">
+         <text>{{array_four[index]}}</text>
+      </picker>
+  </view>
+
+  <view class="button">
+            <button calss="button_compute" type="default" size="default" 
+                    loading="false" plain="false" bindtap="button_compute"
+                    hover-class="hoverbutton">计算成本 </button>
+
+            <button calss="button_clear" type="default" size="default" 
+                    loading="false" plain="false" bindtap="button_clear"
+                    hover-class="hoverbutton">清除结果</button>
+        </view>
+
+  <view class="result">  
+         <text class="result-text">成本是:{{result_text}}</text>
+  </view>
+</view>

@@ -1,0 +1,58 @@
+/**index.wxss**/
+.container{
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: flex-start; 
+  margin-left:20rpx
+}
+
+.logo{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.logo_image{
+  width: 300rpx;
+  height: 300rpx;
+  border-radius: 50%;
+}
+
+.input{
+  /* padding-left: 5%; */
+  display: flex;
+  flex-direction: row;
+  margin-left: 5rpx
+}
+
+.input-price{
+  background-color: lightgray;
+  height: 30%;
+  width: 50%;
+}
+
+
+
+.buttonstyle{
+  display: flex;
+  flex-direction: row;
+  padding-top: 20px;
+}
+
+.con-button{
+  color: black;
+  background-color: lightgreen;
+  margin-bottom: 5px;
+}
+
+.hoverbutton{
+  background-color: lightgray;
+}
+
+.result{
+  display: flex;
+  flex-direction: row;
+  justify-content:flex-start;
+  font-size: 20pt;
+  margin-top: 20rpx
+}
