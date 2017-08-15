@@ -7,7 +7,10 @@ Page({
     array_two: ['爱我', '亲我', '吻我'],
     array_three: ['爱你', '亲你', '吻你'],
     array_four: ['么么哒', '么么', '你最美'],
-    index:0
+    index_one:0,
+    index_two: 0,
+    index_three: 0,
+    index_four: 0
   },
 
   onLoad: function () {
@@ -30,7 +33,7 @@ Page({
   listenerPickerSelected_one: function (e) {
     //改变index值，通过setData()方法重绘界面
     this.setData({
-      index: e.detail.value
+      index_one: e.detail.value
     });
     switch (e.detail.value) {
       case 0:
@@ -57,7 +60,7 @@ Page({
   listenerPickerSelected_two: function (e) {
     //改变index值，通过setData()方法重绘界面
     this.setData({
-      index: e.detail.value
+      index_two: e.detail.value
     });
     switch (e.detail.value) {
       case 0:
@@ -84,7 +87,7 @@ Page({
   listenerPickerSelected_three: function (e) {
     //改变index值，通过setData()方法重绘界面
     this.setData({
-      index: e.detail.value
+      index_three: e.detail.value
     });
     switch (e.detail.value) {
       case 0:
@@ -113,7 +116,7 @@ Page({
   listenerPickerSelected_four: function (e) {
     //改变index值，通过setData()方法重绘界
     this.setData({
-      index: e.detail.value
+      index_four: e.detail.value
     });
     switch (e.detail.value) {
       case 0:
@@ -136,14 +139,14 @@ Page({
   }, 
 
   button_compute:function(e){
-    this.setdata({
+    this.setData({
       result_text: 520
     })
   },
 
   button_clear: function (e) {
-    this.setdata({
-      result_text: null
+    this.setData({
+      result_text:""
     })
   }
 })

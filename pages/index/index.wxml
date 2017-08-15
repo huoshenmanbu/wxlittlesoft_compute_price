@@ -10,31 +10,31 @@
     <input name="input-price" class="input-price"/>
   </view>
 
-  <view style="display:flex">
+  <view style="display:flex;flex-direction: row;justify-content: flex-start">
       <text class="condition_one">条件一：</text>
-      <picker mode="selector" range="{{array_one}}" value="{{index}}" bindchange="listenerPickerSelected_one">
-         <text>{{array_one[index]}}</text>
+      <picker mode="selector" range="{{array_one}}" value="{{index_one}}" bindchange="listenerPickerSelected_one">
+         <text>{{array_one[index_one]}}</text>
       </picker>
   </view>
 
   <view style="display:flex">
       <text class="condition_two">条件二：</text>
-      <picker mode="selector" range="{{array_two}}" value="{{index}}" bindchange="listenerPickerSelected_two">
-         <text>{{array_two[index]}}</text>
+      <picker mode="selector" range="{{array_two}}" value="{{index_two}}" bindchange="listenerPickerSelected_two">
+         <text>{{array_two[index_two]}}</text>
       </picker>
   </view>
 
   <view style="display:flex">
       <text class="condition_three">条件三：</text>
-      <picker mode="selector" range="{{array_three}}" value="{{index}}" bindchange="listenerPickerSelected_three">
-         <text>{{array_three[index]}}</text>
+      <picker mode="selector" range="{{array_three}}" value="{{index_three}}" bindchange="listenerPickerSelected_three">
+         <text>{{array_three[index_three]}}</text>
       </picker>
   </view>
 
   <view style="display:flex">
       <text class="condition_four">条件四：</text>
-      <picker mode="selector" range="{{array_four}}" value="{{index}}" bindchange="listenerPickerSelected_four">
-         <text>{{array_four[index]}}</text>
+      <picker mode="selector" range="{{array_four}}" value="{{index_four}}" bindchange="listenerPickerSelected_four">
+         <text>{{array_four[index_four]}}</text>
       </picker>
   </view>
 
@@ -51,4 +51,5 @@
   <view class="result">  
          <text class="result-text">成本是:{{result_text}}</text>
   </view>
+
 </view>

@@ -5,8 +5,8 @@
   ],
   "window":{
     "backgroundTextStyle":"light",
-    "navigationBarBackgroundColor": "#fff",
-    "navigationBarTitleText": "WeChat",
+    "navigationBarBackgroundColor": "green",
+    "navigationBarTitleText": "乐乐成本计算",
     "navigationBarTextStyle":"black"
   }
 }
