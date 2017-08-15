@@ -6,40 +6,40 @@
          background-size="cover" mode="scaleToFill"/>
   </view>
   <view class="input">
-    <text calss="input-hint">*请输入价格：</text>
+    <text calss="input-hint" style="font-size:16pt">请输入价格：</text>
     <input name="input-price" class="input-price"/>
   </view>
 
-  <view style="display:flex;flex-direction: row;justify-content: flex-start">
-      <text class="condition_one">条件一：</text>
+  <view style="display:flex;flex-direction: row;justify-content: flex-start; margin-left: 20rpx;margin-top: 30rpx;">
+      <text class="condition_one" style="font-size:16pt">条件一：</text>
       <picker mode="selector" range="{{array_one}}" value="{{index_one}}" bindchange="listenerPickerSelected_one">
          <text>{{array_one[index_one]}}</text>
       </picker>
   </view>
 
-  <view style="display:flex">
-      <text class="condition_two">条件二：</text>
+  <view style="display:flex;margin-left: 20rpx;margin-top: 30rpx;">
+      <text class="condition_two" style="font-size:16pt">条件二：</text>
       <picker mode="selector" range="{{array_two}}" value="{{index_two}}" bindchange="listenerPickerSelected_two">
          <text>{{array_two[index_two]}}</text>
       </picker>
   </view>
 
-  <view style="display:flex">
-      <text class="condition_three">条件三：</text>
+  <view style="display:flex;margin-left: 20rpx;margin-top: 30rpx;">
+      <text class="condition_three" style="font-size:16pt">条件三：</text>
       <picker mode="selector" range="{{array_three}}" value="{{index_three}}" bindchange="listenerPickerSelected_three">
          <text>{{array_three[index_three]}}</text>
       </picker>
   </view>
 
-  <view style="display:flex">
-      <text class="condition_four">条件四：</text>
+  <view style="display:flex;margin-left: 20rpx;margin-top: 30rpx;">
+      <text class="condition_four" style="font-size:16pt">条件四：</text>
       <picker mode="selector" range="{{array_four}}" value="{{index_four}}" bindchange="listenerPickerSelected_four">
          <text>{{array_four[index_four]}}</text>
       </picker>
   </view>
 
   <view class="button">
-            <button calss="button_compute" type="primary" size="default" 
+            <button calss="button_compute_style" type="primary" size="default" 
                       bindtap="button_compute"
                     hover-class="hoverbutton">计算成本 </button>
 

@@ -23,7 +23,7 @@
   /* padding-left: 5%; */
   display: flex;
   flex-direction: row;
-  margin-left: 15rpx;
+  margin-left: 20rpx;
   margin-top: 30rpx;
 }
 
@@ -36,22 +36,25 @@
 
 
 .button{
-  /* display: flex;
-  flex-direction: column;
-  padding-top: 20px; */
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+  padding-top: 20rpx; 
 }
 
-.button_compute{
-  /* color: black; */
+.button_compute_style{
+  color: black; 
   background-color: green;
   margin-bottom: 30rpx;
+  margin-right: 50rpx;
   width: 400rpx;
 }
 
 .button_clear{
-  /* color: black; */
+  color: black; 
   background-color: green;
-  margin-bottom: 5rpx;
+  margin-left: 30rpx;
+  margin-bottom: 30rpx;
 }
 
 .hoverbutton{
