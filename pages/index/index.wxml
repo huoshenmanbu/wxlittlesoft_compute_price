@@ -9,7 +9,7 @@
 
   <view class="input">
     <text calss="input-hint" style="font-size:16pt">请输入价格：</text>
-    <input name="input-price" class="input-price" />
+    <input class="input-price" type="number" name="input_price" bindinput="input_price"/>
   </view>
 
   <view style="display:flex;flex-direction: row;justify-content: flex-start; margin-left: 20rpx;margin-top: 30rpx;">

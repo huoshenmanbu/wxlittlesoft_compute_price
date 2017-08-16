@@ -4,10 +4,11 @@ var app = getApp();
 var result_value;
 Page({
   data: {
-    array_one: ['Android', 'IOS', 'ReactNativ', 'WeChat', 'Web'],
-    array_two: ['爱我', '亲我', '吻我'],
-    array_three: ['爱你', '亲你', '吻你'],
-    array_four: ['么么哒', '么么', '你最美'],
+    input_price:"",
+    array_one: ['请选择','Android', 'IOS', 'ReactNativ', 'WeChat', 'Web'],
+    array_two: ['请选择','爱我', '亲我', '吻我'],
+    array_three: ['请选择','爱你', '亲你', '吻你'],
+    array_four: ['请选择','么么哒', '么么', '你最美'],
     index_one:0,
     index_two: 0,
     index_three: 0,
@@ -29,6 +30,12 @@ Page({
       path: '/page/user?id=123'
     }
 
+  },
+  
+  input_price:function(e){
+    this.setData({
+      input_price: e.detail.value
+    });
   },
 
   listenerPickerSelected_one: function (e) {
@@ -153,8 +160,14 @@ Page({
   },
 
   button_clear: function (e) {
+    
     result_value = "";
     this.setData({
+      input_price: "",
+      index_one: 0,
+      index_two: 0,
+      index_three: 0,
+      index_four: 0,
       result_text: result_value
     })
   }
