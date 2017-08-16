@@ -1,55 +1,78 @@
 <!--index.wxml-->
 <view class="container">
   
-  <view class="logo">
-    <image class="logo_image" src="../image/logo.jpg" 
-         background-size="cover" mode="scaleToFill"/>
+  <view class="title">
+    <text class="title_text">请设置参数</text>
+    <view class="line_one"/>
   </view>
+  
+
   <view class="input">
     <text calss="input-hint" style="font-size:16pt">请输入价格：</text>
-    <input name="input-price" class="input-price"/>
+    <input name="input-price" class="input-price" />
   </view>
 
   <view style="display:flex;flex-direction: row;justify-content: flex-start; margin-left: 20rpx;margin-top: 30rpx;">
       <text class="condition_one" style="font-size:16pt">条件一：</text>
       <picker mode="selector" range="{{array_one}}" value="{{index_one}}" bindchange="listenerPickerSelected_one">
-         <text>{{array_one[index_one]}}</text>
+         <text style="font-size:16pt">{{array_one[index_one]}}</text>
       </picker>
   </view>
 
   <view style="display:flex;margin-left: 20rpx;margin-top: 30rpx;">
       <text class="condition_two" style="font-size:16pt">条件二：</text>
       <picker mode="selector" range="{{array_two}}" value="{{index_two}}" bindchange="listenerPickerSelected_two">
-         <text>{{array_two[index_two]}}</text>
+         <text style="font-size:16pt">{{array_two[index_two]}}</text>
       </picker>
   </view>
 
   <view style="display:flex;margin-left: 20rpx;margin-top: 30rpx;">
       <text class="condition_three" style="font-size:16pt">条件三：</text>
       <picker mode="selector" range="{{array_three}}" value="{{index_three}}" bindchange="listenerPickerSelected_three">
-         <text>{{array_three[index_three]}}</text>
+         <text style="font-size:16pt">{{array_three[index_three]}}</text>
       </picker>
   </view>
 
   <view style="display:flex;margin-left: 20rpx;margin-top: 30rpx;">
       <text class="condition_four" style="font-size:16pt">条件四：</text>
       <picker mode="selector" range="{{array_four}}" value="{{index_four}}" bindchange="listenerPickerSelected_four">
-         <text>{{array_four[index_four]}}</text>
+         <text style="font-size:16pt">{{array_four[index_four]}}</text>
       </picker>
   </view>
 
   <view class="button">
-            <button calss="button_compute_style" type="primary" size="default" 
-                      bindtap="button_compute"
+            <button class="button_compute_style"  type="primary"
+                    bindtap="button_compute"       
                     hover-class="hoverbutton">计算成本 </button>
-
-            <button calss="button_clear" type="primary" size="default" 
-                    bindtap="button_clear"
-                    hover-class="hoverbutton">清除结果</button>
+            
         </view>
+  
+  <!-- <view class="result">  
+         <text class="result_text">成本是:{{result_text}}</text>
+  </view> -->
 
   <view class="result">  
-         <text class="result-text">成本是:{{result_text}}</text>
+         <text >成本：</text>
+         <text class="result_text">{{result_text}}</text>
+  </view>
+  <view class="line_three"/>
+
+  <view class="result_last">  
+         <text >上次：</text>
+         <text class="result_last_text">{{result_last_text}}</text>
+  </view>
+  <view class="line_four"/>
+
+  <view class="button">
+         <button class="button_save" type="default" bindtap="button_save"
+                 hover-class="hoverbutton">save</button>
+         <button class="button_clear" type="default" bindtap="button_clear"
+                 hover-class="hoverbutton">clear</button>
+  </view>
+
+  <view class="logo">
+    <image class="logo_image" src="../image/logo.jpg" 
+         background-size="cover" mode="scaleToFill"/>
   </view>
 
 </view>

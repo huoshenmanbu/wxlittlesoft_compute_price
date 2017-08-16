@@ -2,20 +2,43 @@
  .container{
   display: flex;
   flex-direction: column;
-  justify-content: flex-start;
-  align-items: flex-start; 
-  margin-left:20rpx
+  align-items: flex-start;
+  
 } 
 
+.title_text{
+  position: absolute;
+  top: 50rpx;
+  margin-left: 25%;
+  margin-right: 25%;
+  width: 50%;
+  font-size: 25pt;
+}
+
+.line_one{
+  position: absolute;
+  height: 1rpx;
+  width: 98%;
+  margin-left: 1%;
+  top: 150rpx;
+  background: #009FCC;
+}
+
 .logo{
-  display: flex;
+  position: fixed;
+  top: 5rpx;
+  right: 5rpx;
+  padding-bottom: 15rpx;
+  padding-left: 45rpx;
+  /* background-color: #42BD56; */
+  /* display: flex;
   flex-direction: row;
   justify-content: center;
-  align-items: center;
+  align-items: center; */
 }
 .logo_image{
-  width: 300rpx;
-  height: 200rpx;
+  width: 170rpx;
+  height: 139rpx;
   border-radius: 50%;
 }
 
@@ -23,48 +46,100 @@
   /* padding-left: 5%; */
   display: flex;
   flex-direction: row;
+  align-items: center;
   margin-left: 20rpx;
-  margin-top: 30rpx;
+  
 }
 
 .input-price{
   background-color: lightgray;
-  height: 30%;
+  height: 60rpx;
   width: 50%;
+  border-bottom: 1rpx;
+  border-bottom-color: black;
 }
 
-
-
-.button{
-  display: flex;
-  flex-direction: row;
-  justify-content: space-around;
-  padding-top: 20rpx; 
-}
 
 .button_compute_style{
-  color: black; 
-  background-color: green;
-  margin-bottom: 30rpx;
-  margin-right: 50rpx;
-  width: 400rpx;
-}
-
-.button_clear{
-  color: black; 
-  background-color: green;
-  margin-left: 30rpx;
-  margin-bottom: 30rpx;
+  position: absolute;
+  margin-left: 5%;
+  top: 630rpx;
+  width: 90%;
+  background: #009FCC;
+   
 }
 
 .hoverbutton{
   background-color: lightgray;
 }
 
+.line_two{
+  position: absolute;
+  height: 1rpx;
+  width: 98%;
+  margin-left: 1%;
+  margin-top: 120rpx;
+  background: #009FCC; 
+}
+
 .result{
-  display: flex;
-  flex-direction: row;
-  justify-content:flex-start;
-  font-size: 20pt;
-  margin-top: 20rpx
+  margin-top: 120rpx;
+  padding-left: 5%;
+  font-size: 17pt;
+}
+
+.result_text{
+  position: absolute;
+  /* margin-left: 2%; */
+  
+}
+
+.line_three{
+  position: absolute;
+  height: 1rpx;
+  width: 75%;
+  margin-left: 19%;
+  margin-top: 638rpx;
+  background: black; 
+}
+
+.result_last{
+  margin-top: 50rpx;
+  padding-left: 5%;
+  font-size: 17pt;
+}
+
+.result_last_text{
+  position: absolute;
+  /* margin-left: 20%; */
+}
+
+.line_four{
+  position: absolute;
+  height: 1rpx;
+  width: 75%;
+  margin-left: 19%;
+  margin-top: 738rpx;
+  background: black; 
+}
+
+.button{
+   margin-top: 100rpx;
+   
+}
+
+.button_save{
+  position: absolute;
+  margin-bottom: 30rpx;
+  margin-left: 20%;
+  width: 20%;
+  
+}
+
+.button_clear{
+  position: absolute;
+  margin-bottom: 30rpx;
+  margin-left: 60%;
+  width: 20%;
+  
 }

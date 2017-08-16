@@ -5,8 +5,8 @@
   ],
   "window":{
     "backgroundTextStyle":"light",
-    "navigationBarBackgroundColor": "green",
+    "navigationBarBackgroundColor": "#009FCC",
     "navigationBarTitleText": "乐乐成本计算",
-    "navigationBarTextStyle":"black"
+    "navigationBarTextStyle":"white"
   }
 }

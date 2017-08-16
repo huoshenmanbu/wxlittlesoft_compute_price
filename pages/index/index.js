@@ -1,6 +1,7 @@
 //index.js
 //获取应用实例
-var app = getApp()
+var app = getApp();
+var result_value;
 Page({
   data: {
     array_one: ['Android', 'IOS', 'ReactNativ', 'WeChat', 'Web'],
@@ -139,14 +140,22 @@ Page({
   }, 
 
   button_compute:function(e){
+    result_value=520;
     this.setData({
-      result_text: 520
+      result_text: result_value
+    })
+  },
+
+  button_save: function (e) {
+    this.setData({
+      result_last_text: result_value
     })
   },
 
   button_clear: function (e) {
+    result_value = "";
     this.setData({
-      result_text:""
+      result_text: result_value
     })
   }
 })
