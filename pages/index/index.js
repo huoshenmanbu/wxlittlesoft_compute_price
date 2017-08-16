@@ -4,7 +4,7 @@ var app = getApp();
 var result_value;
 Page({
   data: {
-    input_price:"",
+    input_price_value:"",
     array_one: ['请选择','Android', 'IOS', 'ReactNativ', 'WeChat', 'Web'],
     array_two: ['请选择','爱我', '亲我', '吻我'],
     array_three: ['请选择','爱你', '亲你', '吻你'],
@@ -34,7 +34,7 @@ Page({
   
   input_price:function(e){
     this.setData({
-      input_price: e.detail.value
+      input_price_value: e.detail.value
     });
   },
 
@@ -163,7 +163,7 @@ Page({
     
     result_value = "";
     this.setData({
-      input_price: "",
+      input_price_value: "",
       index_one: 0,
       index_two: 0,
       index_three: 0,
