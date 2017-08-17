@@ -20,7 +20,7 @@ Page({
   data: {
     input_price:"",
     array_one: ['请选择', '增值税专用发票', '增值税普通发票'],
-    array_two: ['请选择', '金融服务（营业用）', '业务宣传费-赠送', '购进 / 租入有形动产用于出租 / 转租','购进/租入有形动产用于出租/转租'],
+    array_two: ['请选择', '金融服务（营业用）', '业务宣传费-赠送', '购进 / 租入有形动产用于出租 / 转租','购进/租入不动产用于出租/转租'],
     array_three: ['请选择', '3%', '6%','11%', '17%'],
     array_four: ['请选择','么么哒', '么么', '你最美'],
     index_one:0,
@@ -65,19 +65,9 @@ Page({
       condition_text_value1 = "增值税专用发票"
       console.log(condition_text_value1);
     }else{
-      condition_text_value2 = "增值税普通发票"
+      condition_text_value1 = "增值税普通发票"
       console.log(condition_text_value2);
     }
-    switch (condition_value1) {
-      case 1:
-        condition_text_value1 ="增值税专用发票"
-        console.log(condition_text_value1);
-        break;
-      case 2:
-        condition_text_value2 = "增值税普通发票"
-        console.log(condition_text_value2);
-        break;
-    };
   },
   /**
 * 监听普通picker选择器
@@ -104,23 +94,21 @@ Page({
         array_three: ['请选择', '5%', '11%'],
       })
     };
-    switch (e.detail.value) {
-      case 0:
-        
-        console.log(condition_value2);
-        break;
-      case 1:
-        
-        console.log(condition_value3);
-        break;
-      case 2:
-        
-        console.log(condition_value2);
-        break;
-      case 3:
-        
-        console.log(condition_value2);
-        break;
+    if (condition_value2 == 1) {
+      condition_text_value2 = "金融服务（营业用）"
+      console.log(condition_text_value1);
+    }
+    else if (condition_value2 == 2){
+      condition_text_value2 = "业务宣传费-赠送"
+      console.log(condition_text_value2);
+    }
+    else if (condition_value2 == 3) {
+      condition_text_value2 = "购进 / 租入有形动产用于出租 / 转租"
+      console.log(condition_text_value2);
+    }
+    else if (condition_value2 == 4) {
+      condition_text_value2 = "购进/租入不动产用于出租/转租"
+      console.log(condition_text_value2);
     }
   },
   /**
@@ -188,7 +176,7 @@ Page({
       console.log(condition_value1);
        if(condition_value2==1){
          console.log(condition_value2);
-         result_value=input_X+"  "+"fapiao ";
+         result_value = input_X + ";  " + condition_text_value1 + ";  "+condition_text_value2+"";
        }
        else if(condition_value2==2){
          if(condition_value3==1){
