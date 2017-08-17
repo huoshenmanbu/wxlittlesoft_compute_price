@@ -8,29 +8,29 @@
   
 
   <view class="input">
-    <text calss="input-hint" style="font-size:16pt">请输入价格：</text>
+    <text calss="input-hint" style="font-size:14pt">请输入价格：</text>
     <input class="input-price" type="number" value="{{input_price_value}}" 
            bindinput="input_price"/>
   </view>
 
   <view style="display:flex;flex-direction: row;justify-content: flex-start; margin-left: 20rpx;margin-top: 30rpx;">
-      <text class="condition_one" style="font-size:16pt">条件一：</text>
+      <text class="condition_one" style="font-size:14pt">发票类型：</text>
       <picker mode="selector" range="{{array_one}}" value="{{index_one}}" bindchange="listenerPickerSelected_one">
-         <text style="font-size:16pt">{{array_one[index_one]}}</text>
+         <text style="font-size:14pt">{{array_one[index_one]}}</text>
       </picker>
   </view>
 
   <view style="display:flex;margin-left: 20rpx;margin-top: 30rpx;">
-      <text class="condition_two" style="font-size:16pt">条件二：</text>
+      <text class="condition_two" style="font-size:14pt">采购用途：</text>
       <picker mode="selector" range="{{array_two}}" value="{{index_two}}" bindchange="listenerPickerSelected_two">
-         <text style="font-size:16pt">{{array_two[index_two]}}</text>
+         <text style="font-size:14pt">{{array_two[index_two]}}</text>
       </picker>
   </view>
 
   <view style="display:flex;margin-left: 20rpx;margin-top: 30rpx;">
-      <text class="condition_three" style="font-size:16pt">条件三：</text>
+      <text class="condition_three" style="font-size:14pt">进项税率：</text>
       <picker mode="selector" range="{{array_three}}" value="{{index_three}}" bindchange="listenerPickerSelected_three">
-         <text style="font-size:16pt">{{array_three[index_three]}}</text>
+         <text style="font-size:14pt">{{array_three[index_three]}}</text>
       </picker>
   </view>
 
