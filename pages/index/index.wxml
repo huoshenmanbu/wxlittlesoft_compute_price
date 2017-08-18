@@ -1,43 +1,37 @@
 <!--index.wxml-->
 <view class="container">
   
-  <view class="title">
-    <text class="title_text">请设置参数</text>
+  <view class="logo">
+    <image class="logo_image" src="../image/logo.jpg" 
+         background-size="cover" mode="scaleToFill"/>
     <view class="line_one"/>
   </view>
   
 
   <view class="input">
-    <text calss="input-hint" style="font-size:14pt">请输入价格：</text>
+    <text calss="input-hint" style="font-size:12pt">请输入价格：</text>
     <input class="input-price" type="number" value="{{input_price_value}}" 
            bindinput="input_price"/>
   </view>
 
-  <view style="display:flex;flex-direction: row;justify-content: flex-start; margin-left: 20rpx;margin-top: 30rpx;">
-      <text class="condition_one" style="font-size:14pt">发票类型：</text>
+  <view style="display:flex;flex-direction: row;justify-content: flex-start; align-items: center;margin-left: 20rpx;margin-top: 30rpx;">
+      <text class="condition_one" style="font-size:12pt">发票类型：</text>
       <picker mode="selector" range="{{array_one}}" value="{{index_one}}" bindchange="listenerPickerSelected_one">
-         <text style="font-size:14pt">{{array_one[index_one]}}</text>
+         <text style="font-size:12pt">{{array_one[index_one]}}</text>
       </picker>
   </view>
 
-  <view style="display:flex;margin-left: 20rpx;margin-top: 30rpx;">
-      <text class="condition_two" style="font-size:14pt">采购用途：</text>
+  <view style="display:flex;margin-left: 20rpx;margin-top: 30rpx;align-items: center;">
+      <text class="condition_two" style="font-size:12pt">采购用途：</text>
       <picker mode="selector" range="{{array_two}}" value="{{index_two}}" bindchange="listenerPickerSelected_two">
-         <text style="font-size:14pt">{{array_two[index_two]}}</text>
+         <text style="font-size:12pt">{{array_two[index_two]}}</text>
       </picker>
   </view>
 
-  <view style="display:flex;margin-left: 20rpx;margin-top: 30rpx;">
-      <text class="condition_three" style="font-size:14pt">进项税率：</text>
+  <view style="display:flex;margin-left: 20rpx;margin-top: 30rpx;align-items: center;">
+      <text class="condition_three" style="font-size:12pt">进项税率：</text>
       <picker mode="selector" range="{{array_three}}" value="{{index_three}}" bindchange="listenerPickerSelected_three">
-         <text style="font-size:14pt">{{array_three[index_three]}}</text>
-      </picker>
-  </view>
-
-  <view style="display:flex;margin-left: 20rpx;margin-top: 30rpx;">
-      <text class="condition_four" style="font-size:16pt">条件四：</text>
-      <picker mode="selector" range="{{array_four}}" value="{{index_four}}" bindchange="listenerPickerSelected_four">
-         <text style="font-size:16pt">{{array_four[index_four]}}</text>
+         <text style="font-size:12pt">{{array_three[index_three]}}</text>
       </picker>
   </view>
 
@@ -71,9 +65,6 @@
                  hover-class="hoverbutton">clear</button>
   </view>
 
-  <view class="logo">
-    <image class="logo_image" src="../image/logo.jpg" 
-         background-size="cover" mode="scaleToFill"/>
-  </view>
+  
 
 </view>

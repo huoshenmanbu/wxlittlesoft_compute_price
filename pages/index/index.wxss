@@ -25,21 +25,17 @@
 }
 
 .logo{
-  position: fixed;
-  top: 5rpx;
-  right: 5rpx;
+  position: absolute;
+  top: 0;
+  left: 0;
+  margin-left: 1%;
+  width: 98%;
   padding-bottom: 15rpx;
-  padding-left: 45rpx;
-  /* background-color: #42BD56; */
-  /* display: flex;
-  flex-direction: row;
-  justify-content: center;
-  align-items: center; */
 }
 .logo_image{
-  width: 170rpx;
-  height: 139rpx;
-  border-radius: 50%;
+  margin-left: 4%;
+  width: 90%;
+  height: 150rpx;
 }
 
 .input{
@@ -53,17 +49,20 @@
 
 .input-price{
   background-color: lightgray;
-  height: 60rpx;
+  height: 50rpx;
   width: 50%;
   border-bottom: 1rpx;
   border-bottom-color: black;
+  font-size:12pt
 }
-
+.button{
+  display:flex;
+  align-items: center;
+}
 
 .button_compute_style{
   position: absolute;
   margin-left: 5%;
-  top: 630rpx;
   width: 90%;
   background: #009FCC;
    
