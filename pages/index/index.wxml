@@ -9,7 +9,7 @@
   
 
   <view class="input">
-    <text calss="input-hint" style="font-size:12pt">请输入价格：</text>
+    <text calss="input-hint" style="font-size:12pt">含税价格：</text>
     <input class="input-price" type="number" value="{{input_price_value}}" 
            bindinput="input_price"/>
   </view>
@@ -21,7 +21,7 @@
       </picker>
   </view>
 
-  <view style="display:flex;margin-left: 20rpx;margin-top: 30rpx;align-items: center;">
+  <view style="display:flex;flex-direction: row;justify-content: flex-start;margin-left: 20rpx;margin-top: 30rpx;align-items: center;">
       <text class="condition_two" style="font-size:12pt">采购用途：</text>
       <picker mode="selector" range="{{array_two}}" value="{{index_two}}" bindchange="listenerPickerSelected_two">
          <text style="font-size:12pt">{{array_two[index_two]}}</text>
@@ -31,12 +31,29 @@
   <view style="display:flex;margin-left: 20rpx;margin-top: 30rpx;align-items: center;">
       <text class="condition_three" style="font-size:12pt">进项税率：</text>
       <picker mode="selector" range="{{array_three}}" value="{{index_three}}" bindchange="listenerPickerSelected_three">
-         <text style="font-size:12pt">{{array_three[index_three]}}</text>
+          <text style="font-size:12pt">{{array_three[index_three]}}</text> 
       </picker>
+  </view>
+  <view class="input_one" style="display:{{hideinput_one}};">
+    <text  style="font-size:12pt;width:256rpx">预计租出含税价：</text>
+    <input class="input_one_price" type="number" value="{{input_one_price_value}}" 
+           bindinput="input_one_price"/>
+  </view>
+
+  <view class="input_two" style="display:{{hideinput_two}};">
+    <text  style="font-size:12pt;width:256rpx">房屋购入面积：</text>
+    <input class="input_two_price" type="number" value="{{input_two_price_value}}" 
+           bindinput="input_two_price"/>
+  </view>
+
+  <view class="input_three" style="display:{{hideinput_three}};">
+    <text  style="font-size:12pt;width:256rpx">房屋出租面积：</text>
+    <input class="input_three_price" type="number" value="{{input_three_price_value}}" 
+           bindinput="input_three_price"/>
   </view>
 
   <view class="button">
-            <button class="button_compute_style"  type="primary"
+            <button class="button_compute_style"
                     bindtap="button_compute"       
                     hover-class="hoverbutton">计算成本 </button>
             
@@ -49,14 +66,15 @@
   <view class="result">  
          <text >成本：</text>
          <text class="result_text">{{result_text}}</text>
+         <!-- <view class="line_three"/> -->
   </view>
-  <view class="line_three"/>
-
+  
   <view class="result_last">  
          <text >上次：</text>
          <text class="result_last_text">{{result_last_text}}</text>
+         <!-- <view class="line_four"/> -->
   </view>
-  <view class="line_four"/>
+  
 
   <view class="button">
          <button class="button_save" type="default" bindtap="button_save"

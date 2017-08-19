@@ -20,13 +20,16 @@ Page({
   data: {
     input_price:"",
     array_one: ['请选择', '增值税专用发票', '增值税普通发票'],
-    array_two: ['请选择', '金融服务（营业用）', '业务宣传费-赠送', '购进 / 租入有形动产用于出租 / 转租','购进/租入不动产用于出租/转租'],
-    array_three: ['请选择', '3%', '6%','11%', '17%'],
+    array_two: ['请选择', '金融服务（营业用）', '业务宣传费-赠送', '购进或租入有形动产用于出租、转租','购进或租入不动产用于出租、转租'],
+    array_three: ['请选择', "百分之三", '6%','11%', '17%'],
     array_four: ['请选择','么么哒', '么么', '你最美'],
     index_one:0,
     index_two: 0,
     index_three: 0,
-    index_four: 0
+    index_four: 0,
+    hideinput_one:"none",
+    hideinput_two: "none",
+    hideinput_three: "none",
   },
 
   onLoad: function () {
@@ -79,7 +82,7 @@ Page({
     });
     condition_value2 = e.detail.value;
     console.log(condition_value2);
-    if (e.detail.value == 1 && e.detail.value == 2) {
+    if (e.detail.value == 1 || e.detail.value == 2) {
       this.setData({
         array_three: ['请选择', '3%','6%','11%', '17%'],
       })
@@ -103,7 +106,7 @@ Page({
       console.log(condition_text_value2);
     }
     else if (condition_value2 == 3) {
-      condition_text_value2 = "购进 / 租入有形动产用于出租 / 转租"
+      condition_text_value2 = "购进/租入有形动产用于出租/转租"
       console.log(condition_text_value2);
     }
     else if (condition_value2 == 4) {
@@ -120,27 +123,33 @@ Page({
       index_three: e.detail.value
     });
     condition_value3 = e.detail.value;
-    console.log(condition_value3);
-    switch (e.detail.value) {
-      case 0:
-        
-        console.log(condition_value3);
-        break;
-      case 1:
-        
-        console.log(condition_value3);
-        break;
-      case 2:
-        
-        console.log(condition_value3);
-        break;
-      case 3:
-        
-        console.log(condition_value3);
-        break;
+    
+    if (condition_value1 == 1 && condition_value2 == 3){
+        console.log(condition_value1 + ";" + condition_value2);
+        this.setData({
+          hideinput_one: "flex"
+        });
     }
-
-
+    else if (condition_value1 == 1 && condition_value2 == 4){
+      this.setData({
+        hideinput_one: "flex",
+        hideinput_two: "flex",
+        hideinput_three: "flex"
+      });
+    }
+    else if (condition_value1 == 2 && (condition_value2 == 3||4)) {
+      console.log(condition_value1 + ";" + condition_value2);
+      this.setData({
+        hideinput_one: "flex"
+      });
+    }
+    else{
+      this.setData({
+        hideinput_one: "none",
+        hideinput_two: "none",
+        hideinput_three: "none"
+      });
+    }
   },
   /**
 * 监听普通picker选择器
@@ -173,18 +182,60 @@ Page({
   button_compute:function(e){
     
     if(condition_value1==1){
-      console.log(condition_value1);
        if(condition_value2==1){
-         console.log(condition_value2);
          result_value = input_X + ";  " + condition_text_value1 + ";  "+condition_text_value2+"";
        }
        else if(condition_value2==2){
-         if(condition_value3==1){
-           result_value=input_X/1.03*1.17
-         }else{
-           result_value=input_X;
+         if (condition_value3 == 1) {
+           result_value = Math.round(input_X / 1.03 * 1.17 * 100) / 100
+         }
+         else {
+           result_value = input_X;
+         }
+         
+       }else if(condition_text_value2==3){
+         if (condition_value3 == 1) {
+           result_value = Math.round(((input_X - input_X / 1.03 * 0.03) + (condition_value3_Y / 1.17 * 0.17)) * 100) / 100
+         }
+         else if (condition_value3 == 2) {
+           result_value = Math.round(((input_X - input_X / 1.11 * 0.11) + (condition_value3_Y / 1.17 * 0.17)) * 100) / 100
+         }
+         else {
+           result_value = Math.round(((input_X - input_X / 1.17 * 1.17) + (condition_value3_Y / 1.17 * 0.17)) * 100) / 100
          }
        }
+       else if (condition_text_value2 == 4) {
+         if (condition_value3 == 1) {
+           result_value = Math.round(((input_X - condition_value3_B /condition_value3_A*input_X / 1.05 * 0.05) + (condition_value3_Y / 1.11 * 0.11)) * 100) / 100
+         }
+         else {
+           result_value = Math.round(((input_X - condition_value3_B / condition_value3_A * input_X / 1.11 * 0.11) + (condition_value3_Y / 1.11 * 0.11)) * 100) / 100
+         }
+       }
+    }
+    else if (condition_value1 == 2) {
+      if (condition_value2 == 1) {
+        result_value = input_X + ";  " + condition_text_value1 + ";  " + condition_text_value2 + "";
+      }
+      else if (condition_value2 == 2) {
+        if (condition_value3 == 1) {
+          result_value = Math.round(input_X / 1.03 * 1.20 * 100) / 100
+        }
+        if (condition_value3 == 2) {
+          result_value = Math.round(input_X / 1.06 * 1.12 * 100) / 100
+        }
+        if (condition_value3 == 3) {
+          result_value = Math.round(input_X / 1.11 * 1.22 * 100) / 100
+        }
+        else {
+          result_value = Math.round(input_X / 1.17 * 1.24 * 100) / 100;
+        }
+      } else if (condition_text_value2 == 3) {
+          result_value = Math.round(input_X + condition_value3_Y / 1.17 * 0.17) / 100
+      }
+      else if (condition_text_value2 == 4) {
+          result_value = Math.round(input_X + condition_value3_Y / 1.11 * 0.11) / 100
+      }
     }
 
     // result_value=520;
@@ -210,5 +261,8 @@ Page({
       index_four: 0,
       result_text: result_value
     })
-  }
+  },
+
+  
+         
 })
