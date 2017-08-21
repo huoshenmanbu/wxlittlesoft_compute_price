@@ -140,7 +140,7 @@
 .result{
   display: flex;
   flex-direction: row;
-  margin-top: 100rpx;
+  margin-top: 120rpx;
   padding-left: 5%;
 }
 
