@@ -278,7 +278,8 @@ Page({
            result_compute_vlue = input_X 
          }
          
-       }else if(condition_value2==3){
+       }
+       else if(condition_value2==3){
          if (condition_value3 == 1) {
            result_compute_vlue = Math.round(((input_X - input_X / 1.03 * 0.03) + (condition_value3_Y / 1.17 * 0.17)) * 100) / 100
 
@@ -313,22 +314,20 @@ Page({
           console.log("jisuan:" + input_X);
           result_compute_vlue = Math.round(input_X / 1.03 * 1.2*100)/100;
           console.log("result:" + result_compute_vlue);
-          // result_compute_vlue = util.toMyFixed(util.multiply(util.divide(input_X, 1.03,10),1.2,10),3)
         }
         else if (condition_value3 == 2) {
-          result_compute_vlue = Math.round(input_X / 1.06 * 100) / 100;
-          // result_compute_vlue = Math.round((Math.round(input_X / 1.06 * 100) / 100000000)* 1.12 * 100)/100;
-
+          result_compute_vlue = Math.round(input_X / 1.06 *1.12* 100) / 100;
         }
         else if (condition_value3 == 3) {
-          result_compute_vlue = (input_X / 1.11 * 1.22).toFixed();
+          result_compute_vlue = Math.round(input_X / 1.11 * 1.22*100)/100;
 
         }
         else{
           result_compute_vlue = Math.round(input_X / 1.17 * 1.34 * 100) / 100;
 
         }
-      } else if (condition_value2 == 3) {
+      } 
+      else if (condition_value2 == 3) {
         result_compute_vlue = Math.round((input_X + condition_value3_Y / 1.17 * 0.17)*100) / 100
 
       }
@@ -382,129 +381,3 @@ Page({
     });
   },   
 })
-
-/** 
- * 左补齐字符串 
- *  
- * @param nSize 
- *            要补齐的长度 
- * @param ch 
- *            要补齐的字符 
- * @return 
- */
-String.prototype.padLeft = function (nSize, ch) {
-  var len = 0;
-  var s = this ? this : "";
-  ch = ch ? ch : '0';// 默认补0  
-
-  len = s.length;
-  while (len < nSize) {
-    s = ch + s;
-    len++;
-  }
-  return s;
-}
-
-/** 
- * 右补齐字符串 
- *  
- * @param nSize 
- *            要补齐的长度 
- * @param ch 
- *            要补齐的字符 
- * @return 
- */
-String.prototype.padRight = function (nSize, ch) {
-  var len = 0;
-  var s = this ? this : "";
-  ch = ch ? ch : '0';// 默认补0  
-
-  len = s.length;
-  while (len < nSize) {
-    s = s + ch;
-    len++;
-  }
-  return s;
-}
-/** 
- * 左移小数点位置（用于数学计算，相当于除以Math.pow(10,scale)） 
- *  
- * @param scale 
- *            要移位的刻度 
- * @return 
- */
-String.prototype.movePointLeft = function (scale) {
-  var s, s1, s2, ch, ps, sign;
-  ch = '.';
-  sign = '';
-  s = this ? this : "";
-
-  if (scale <= 0) return s;
-  ps = s.split('.');
-  s1 = ps[0] ? ps[0] : "";
-  s2 = ps[1] ? ps[1] : "";
-  if (s1.slice(0, 1) == '-') {
-    s1 = s1.slice(1);
-    sign = '-';
-  }
-  if (s1.length <= scale) {
-    ch = "0.";
-    s1 = s1.padLeft(scale);
-  }
-  return sign + s1.slice(0, -scale) + ch + s1.slice(-scale) + s2;
-}
-/** 
- * 右移小数点位置（用于数学计算，相当于乘以Math.pow(10,scale)） 
- *  
- * @param scale 
- *            要移位的刻度 
- * @return 
- */
-String.prototype.movePointRight = function (scale) {
-  var s, s1, s2, ch, ps;
-  ch = '.';
-  s = this ? this : "";
-
-  if (scale <= 0) return s;
-  ps = s.split('.');
-  s1 = ps[0] ? ps[0] : "";
-  s2 = ps[1] ? ps[1] : "";
-  if (s2.length <= scale) {
-    ch = '';
-    s2 = s2.padRight(scale);
-  }
-  return s1 + s2.slice(0, scale) + ch + s2.slice(scale, s2.length);
-}
-/** 
- * 移动小数点位置（用于数学计算，相当于（乘以/除以）Math.pow(10,scale)） 
- *  
- * @param scale 
- *            要移位的刻度（正数表示向右移；负数表示向左移动；0返回原值） 
- * @return 
- */
-String.prototype.movePoint = function (scale) {
-  if (scale >= 0)
-    return this.movePointRight(scale);
-  else
-    return this.movePointLeft(-scale);
-}
-
-Number.prototype.toFixed = function (scale) {
-  var s, s1, s2, start;
-  console.log('123');
-  s1 = this + "";
-  start = s1.indexOf(".");
-  s = s1.movePoint(scale);
-
-  if (start >= 0) {
-    s2 = Number(s1.substr(start + scale + 1, 1));
-    if (s2 >= 5 && this >= 0 || s2 < 5 && this < 0) {
-      s = Math.ceil(s);
-    }
-    else {
-      s = Math.floor(s);
-    }
-  }
-
-  return s.toString().movePoint(-scale);
-}  
