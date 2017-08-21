@@ -18,8 +18,7 @@ var condition_array_one = ['3%', '6%', '11%', '17%'];
 var condition_array_two = ['3%', '11%', '17%'];
 var condition_array_three = ['5%', '11%'];
 var result_value;
-var result_compute_vlue = "";
-var util = require('../../utils/util.js')
+var result_compute_vlue="";
 
 Page({
   data: {
@@ -311,9 +310,9 @@ Page({
       }
       else if (condition_value2 == 2) {
         if (condition_value3 == 1) {
-          console.log("jisuan:" + input_X);
+          
           result_compute_vlue = Math.round(input_X / 1.03 * 1.2*100)/100;
-          console.log("result:" + result_compute_vlue);
+          
         }
         else if (condition_value3 == 2) {
           result_compute_vlue = Math.round(input_X / 1.06 *1.12* 100) / 100;
@@ -328,11 +327,10 @@ Page({
         }
       } 
       else if (condition_value2 == 3) {
-        result_compute_vlue = Math.round((input_X + condition_value3_Y / 1.17 * 0.17)*100) / 100
-
+        result_compute_vlue = Math.round((Number(input_X) + condition_value3_Y / 1.17 * 0.17)*100)/100;
       }
-      else if (condition_text_value2 == 4) {
-        result_compute_vlue = Math.round((input_X + condition_value3_Y / 1.11 * 0.11) * 100) / 100
+      else  {
+        result_compute_vlue = Math.round((Number(input_X) + condition_value3_Y / 1.11 * 0.11) * 100) / 100
       }
     }
     console.log(result_compute_vlue);
