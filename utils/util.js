@@ -120,5 +120,5 @@ module.exports = {
   subtract: subtract,
   multiply: multiply,
   divide: divide,
-  toFixed: toFixed
+  toMyFixed: toFixed
 }

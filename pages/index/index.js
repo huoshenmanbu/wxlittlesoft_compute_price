@@ -311,19 +311,20 @@ Page({
       else if (condition_value2 == 2) {
         if (condition_value3 == 1) {
           console.log("jisuan:" + input_X);
-          // result_compute_vlue = (input_X / 1.03 * 1.2 ).toFixed(2)
-          result_compute_vlue = util.toFixed(util.multiply(util.divide(input_X, 1.03,10),1.2,10),3)
+          result_compute_vlue = Math.round(input_X / 1.03 * 1.2*100)/100;
+          console.log("result:" + result_compute_vlue);
+          // result_compute_vlue = util.toMyFixed(util.multiply(util.divide(input_X, 1.03,10),1.2,10),3)
         }
-        if (condition_value3 == 2) {
-          // temp = Math.round(input_X / 1.06 * 100000000) / 100000000;
-          result_compute_vlue = Math.round((Math.round(input_X / 1.06 * 100000000) / 100000000)* 1.12 * 100)/100;
+        else if (condition_value3 == 2) {
+          result_compute_vlue = Math.round(input_X / 1.06 * 100) / 100;
+          // result_compute_vlue = Math.round((Math.round(input_X / 1.06 * 100) / 100000000)* 1.12 * 100)/100;
 
         }
-        if (condition_value3 == 3) {
-          result_compute_vlue = Math.round(input_X / 1.11 * 1.22 * 100) / 100
+        else if (condition_value3 == 3) {
+          result_compute_vlue = (input_X / 1.11 * 1.22).toFixed();
 
         }
-        else {
+        else{
           result_compute_vlue = Math.round(input_X / 1.17 * 1.34 * 100) / 100;
 
         }
@@ -335,9 +336,8 @@ Page({
         result_compute_vlue = Math.round((input_X + condition_value3_Y / 1.11 * 0.11) * 100) / 100
       }
     }
-
+    console.log(result_compute_vlue);
     result_value = result_compute_vlue + " (" + condition_text_value1 + ";  " + condition_text_value3 + ")";
-
     // result_value=520;
     this.setData({
       result_text: result_value
@@ -491,7 +491,7 @@ String.prototype.movePoint = function (scale) {
 
 Number.prototype.toFixed = function (scale) {
   var s, s1, s2, start;
-
+  console.log('123');
   s1 = this + "";
   start = s1.indexOf(".");
   s = s1.movePoint(scale);
