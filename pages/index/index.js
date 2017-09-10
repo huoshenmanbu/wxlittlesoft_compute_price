@@ -118,12 +118,32 @@ Page({
     }
 
     //动态设置税率列表并设置税率文本为无
+    //对其他情况进行特殊处理
     if (condition_value1 == 3) {
       this.setData({
         index_three: 0,
         array_three: ['无'],
       })
       condition_text_value3 = '无';
+    }
+    else {
+      if (condition_value2 == 1 || condition_value2 == 2) {
+        this.setData({
+          array_three: ['请选择', '3%', '6%', '11%', '17%'],
+        })
+      };
+      if (condition_value2 == 3) {
+        this.setData({
+          index_three: 0,
+          array_three: ['请选择', '3%', '11%', '17%'],
+        })
+      };
+      if (condition_value2 == 4) {
+        this.setData({
+          index_three: 0,
+          array_three: ['请选择', '5%', '11%'],
+        })
+      };
     }
   },
 
@@ -139,7 +159,7 @@ Page({
     condition_value2 = e.detail.value;
     console.log(condition_value2);
     //动态设置税率列表
-    if (condition_value1!=3){
+    if(condition_value1!=3){
       if (e.detail.value == 1 || e.detail.value == 2) {
         this.setData({
           array_three: ['请选择', '3%', '6%', '11%', '17%'],
@@ -157,14 +177,12 @@ Page({
           array_three: ['请选择', '5%', '11%'],
         })
       };
-
     }else{
       this.setData({
         index_three: 0,
         array_three: ['无'],
       })
     }
-
     
 
     //动态设置布局
@@ -228,19 +246,20 @@ Page({
       index_three: e.detail.value
     });
     condition_value3 = e.detail.value;
-
+    console.log("+++condition_value1：" + condition_value1);
     //获取条件对应的文本，方便显示
-    if (condition_value2 == 1 ||condition_value2==2){
-      condition_text_value3 = condition_array_one[condition_value3-1];
-    }
-    else if (condition_value2 == 3){
-      condition_text_value3 = condition_array_two[condition_value3-1];
-    }
-    else if (condition_value2 == 4) {
-      condition_text_value3 = condition_array_three[condition_value3 - 1];
-    } 
-    else if (condition_value1 == 3) {
-      condition_text_value3 = '无';
+    if(condition_value1!=3){
+      if (condition_value2 == 1 || condition_value2 == 2) {
+        condition_text_value3 = condition_array_one[condition_value3 - 1];
+      }
+      else if (condition_value2 == 3) {
+        condition_text_value3 = condition_array_two[condition_value3 - 1];
+      }
+      else if (condition_value2 == 4) {
+        condition_text_value3 = condition_array_three[condition_value3 - 1];
+      } 
+    }else{
+      condition_text_value3 = "无"
     }
     console.log("condition_text_value3："+condition_text_value3);
   },
@@ -407,6 +426,7 @@ Page({
       input_price_value: "",
       index_one: 0,
       index_two: 0,
+      array_three: ['请选择', '3%', '6%', '11%', '17%'],
       index_three: 0,
       input_one_price_value:"",
       input_two_price_value: "",
