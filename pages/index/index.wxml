@@ -34,11 +34,11 @@
           <text style="font-size:12pt">进项税率：{{array_three[index_three]}}</text> 
       </picker>
   </view>
-  <view class="input_one" style="display:{{hideinput_one}};">
+  <!-- <view class="input_one" style="display:{{hideinput_one}};">
     <text  style="font-size:12pt;width:256rpx">拟租出含税价：</text>
     <input class="input_one_price" type="number" value="{{input_one_price_value}}" 
            bindinput="input_one_price"/>
-  </view>
+  </view> -->
 
   <view class="input_two" style="display:{{hideinput_two}};">
     <text  style="font-size:12pt;width:256rpx">房屋购入面积：</text>
