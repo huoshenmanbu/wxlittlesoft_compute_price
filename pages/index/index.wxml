@@ -3,7 +3,7 @@
   
   <view class="logo">
     <image class="logo_image" src="../image/logo.jpg" 
-         background-size="cover" mode="scaleToFill"/>
+         background-size="cover" mode="aspectFit"/>
     <view class="line_one"/>
   </view>
   
@@ -16,21 +16,21 @@
 
   <view style="display:flex;flex-direction: row;justify-content: flex-start; align-items: center;margin-left: 20rpx;margin-top: 30rpx;">
       <!-- <text class="condition_one" style="font-size:12pt">发票类型：</text> -->
-      <picker mode="selector" range="{{array_one}}" value="{{index_one}}" bindchange="listenerPickerSelected_one">
+      <picker  style="width:200pt" mode="selector" range="{{array_one}}" value="{{index_one}}" bindchange="listenerPickerSelected_one">
          <text style="font-size:12pt">发票类型：{{array_one[index_one]}}</text>
       </picker>
   </view>
 
   <view style="display:flex;flex-direction: row;justify-content: flex-start;margin-left: 20rpx;margin-top: 30rpx;align-items: center;">
       <!-- <text class="condition_two" style="font-size:12pt">采购用途：</text> -->
-      <picker mode="selector" range="{{array_two}}" value="{{index_two}}" bindchange="listenerPickerSelected_two">
+      <picker style="width:200pt" mode="selector" range="{{array_two}}" value="{{index_two}}" bindchange="listenerPickerSelected_two">
          <text style="font-size:12pt">采购用途：{{array_two[index_two]}}</text>
       </picker>
   </view>
 
   <view style="display:flex;margin-left: 20rpx;margin-top: 30rpx;align-items: center;">
       <!-- <text class="condition_three" style="font-size:12pt">进项税率：</text> -->
-      <picker mode="selector" range="{{array_three}}" value="{{index_three}}" bindchange="listenerPickerSelected_three">
+      <picker style="width:200pt" mode="selector" range="{{array_three}}" value="{{index_three}}" bindchange="listenerPickerSelected_three">
           <text style="font-size:12pt">进项税率：{{array_three[index_three]}}</text> 
       </picker>
   </view>
@@ -65,13 +65,13 @@
 
   <view class="result">  
          <!-- <text >成本：</text> -->
-         <text class="result_text">成本：{{result_text}}</text>
+         <text class="result_text">实际成本：{{result_text}}</text>
          <!-- <view class="line_three"/> -->
   </view>
   
   <view class="result_last">  
          <!-- <text >上次：</text> -->
-         <text class="result_last_text">上次：{{result_last_text}}</text>
+         <text class="result_last_text">上次结果：{{result_last_text}}</text>
          <!-- <view class="line_four"/> -->
   </view>
   
@@ -83,6 +83,10 @@
                  hover-class="hoverbutton">clear</button>
   </view>
 
-  
+  <view class="description">  
+         <text class="description_one">说明：</text>
+         <text class="description_two" style="margin-top:2pt; text-indent:0px;"> 1、用途为“业务宣传费-赠送”的是实际成本中包含了因为视同销售而产生的销项税额；</text>
+         <text class="description_three" style="margin-top:2pt;text-indent:0px;"> 2、用途为另外三种的是实际成本为支付的实际金额扣除能够抵减的进项税额。</text>
+  </view>
 
 </view>

@@ -30,7 +30,7 @@
   left: 0;
   margin-left: 1%;
   width: 98%;
-  padding-bottom: 15rpx;
+  padding-bottom: 10rpx;
 }
 .logo_image{
   margin-left: 4%;
@@ -56,6 +56,10 @@
   font-size:12pt
 }
 
+.selector{
+  width: 200rpx;
+
+}
 .input_one{
   /* padding-left: 5%; */
   flex-direction: row;
@@ -202,4 +206,14 @@
   margin-left: 60%;
   width: 20%;
   
+}
+
+.description{
+  display: flex;
+  flex-direction:column;
+  font-size:11pt;
+  margin-top: 15%;
+  margin-left:10pt;
+  margin-right: 10pt;
+  line-height: 150%
 }

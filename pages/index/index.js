@@ -52,7 +52,7 @@ Page({
     return {
       title: '乐乐为猪猪专属打造的成本计算小程序',
       desc: '欢迎使用',
-      path: '/page/user?id=123'
+      path: 'pages/index/index'//'/page/user?id=123'
     }
 
   },
