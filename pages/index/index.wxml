@@ -23,7 +23,7 @@
 
   <view style="display:flex;flex-direction: row;justify-content: flex-start;margin-left: 20rpx;margin-top: 30rpx;align-items: center;">
       <!-- <text class="condition_two" style="font-size:12pt">采购用途：</text> -->
-      <picker style="width:200pt" mode="selector" range="{{array_two}}" value="{{index_two}}" bindchange="listenerPickerSelected_two">
+      <picker style="width:246pt" mode="selector" range="{{array_two}}" value="{{index_two}}" bindchange="listenerPickerSelected_two">
          <text style="font-size:12pt">采购用途：{{array_two[index_two]}}</text>
       </picker>
   </view>
