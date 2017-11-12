@@ -13,7 +13,7 @@
 
   <view class="onetitle">
      <text calss="onetitle_text" style="font-size:16pt;margin-bottom:15rpx;color:#d7d600">A商品</text>
-     <button class="onetitle_button_clear" type="default" bindtap="onetitle_button_clear" hover-class="hoverbutton">clear A</button>
+     <button class="onetitle_button_clear" type="default" bindtap="onetitle_button_clear" hover-class="hoverbutton">清除</button>
   </view>
 
   <view class="input">
@@ -67,7 +67,7 @@
 
 <view class="twotitle">
      <text calss="twotitle_text" style="font-size:16pt;margin-bottom:15rpx;color:#d7d600;margin-top:15rpx">B商品</text>
-     <button class="twotitle_button_clear" type="default" bindtap="twotitle_button_clear" hover-class="hoverbutton">clear B</button>
+     <button class="twotitle_button_clear" type="default" bindtap="twotitle_button_clear" hover-class="hoverbutton">清除</button>
   </view>
 
   <view class="twotitle_input">
@@ -126,7 +126,7 @@
 
 <view class="threetitle">
      <text calss="threetitle_text" style="font-size:16pt;margin-bottom:15rpx;color:#d7d600;margin-top:15rpx">C商品</text>
-        <button class="threetitle_button_clear" type="default" bindtap="threetitle_button_clear" hover-class="hoverbutton">clear C</button>
+        <button class="threetitle_button_clear" type="default" bindtap="threetitle_button_clear" hover-class="hoverbutton">清除</button>
   </view>
 
   <view class="threetitle_input">
@@ -192,13 +192,13 @@
 
   <view class="result">  
          <!-- <text >成本：</text> -->
-         <text class="result_text">实际成本：{{result_text}}</text>
+         <text class="result_text">成本最低：{{result_text}}</text>
          <!-- <view class="line_three"/> -->
   </view>
   
   <view class="result_last">  
          <!-- <text >上次：</text> -->
-         <text class="result_last_text">上次结果：{{result_last_text}}</text>
+         <text class="result_last_text">价格明细：{{result_last_text}}</text>
          <!-- <view class="line_four"/> -->
   </view>
   
@@ -207,7 +207,7 @@
          <!-- <button class="button_save" type="default" bindtap="button_save"
                  hover-class="hoverbutton">save</button> -->
          <button class="button_clear" type="default" bindtap="button_clear"
-                 hover-class="hoverbutton">clear All</button>
+                 hover-class="hoverbutton">全部清除</button>
   </view>
 
 </view>
