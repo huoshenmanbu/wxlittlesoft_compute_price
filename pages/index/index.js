@@ -1,7 +1,7 @@
 //index.js
 //获取应用实例
 var app = getApp();
-var input_X;
+var input_X=0;
 var condition_value1;
 var condition_text_value1 = "";
 var condition_value2;
@@ -25,7 +25,7 @@ var result_max="";
 var result_ABC_price="";
 
 
-var twotitle_input_X;
+var twotitle_input_X=0;
 var twotitle_condition_value1;
 var twotitle_condition_text_value1 = "";
 var twotitle_condition_value2;
@@ -46,7 +46,7 @@ var twotitle_result_value;
 var twotitle_result_compute_vlue = "";
 
 
-var threetitle_input_X;
+var threetitle_input_X=0;
 var threetitle_condition_value1;
 var threetitle_condition_text_value1 = "";
 var threetitle_condition_value2;
@@ -980,7 +980,7 @@ Page({
       else if (condition_text_value2 == 4) {
         result_compute_vlue = input_X
       }
-    }else{
+    } else if (condition_value1 == 3){
       if (condition_value2 == 2){
         result_compute_vlue = Math.round(input_X / 1.17 * 1.34 * 100) / 100;
       }else{
@@ -1060,7 +1060,7 @@ Page({
       else if (twotitle_condition_text_value2 == 4) {
         twotitle_result_compute_vlue = twotitle_input_X
       }
-    } else {
+    } else if (twotitle_condition_value1 == 3){
       if (twotitle_condition_value2 == 2) {
         twotitle_result_compute_vlue = Math.round(twotitle_input_X / 1.17 * 1.34 * 100) / 100;
       } else {
@@ -1143,7 +1143,7 @@ Page({
       else if (threetitle_condition_text_value2 == 4) {
         threetitle_result_compute_vlue = threetitle_input_X
       }
-    } else {
+    } else if (threetitle_condition_value1 == 3){
       if (threetitle_condition_value2 == 2) {
         threetitle_result_compute_vlue = Math.round(threetitle_input_X / 1.17 * 1.34 * 100) / 100;
       } else {
@@ -1157,46 +1157,49 @@ Page({
 
     console.log(result_compute_vlue + ";" + twotitle_result_compute_vlue + ";" + threetitle_result_compute_vlue);
     // 比较A B C三个商品的大小
-    if (result_compute_vlue > twotitle_result_compute_vlue && twotitle_result_compute_vlue >= threetitle_result_compute_vlue){
-      result_max = result_compute_vlue;
-      result_value = "A商品，价格为" + result_max+"元";
-    }
-
-    else if (result_compute_vlue > twotitle_result_compute_vlue && threetitle_result_compute_vlue > twotitle_result_compute_vlue&& result_compute_vlue > threetitle_result_compute_vlue){
-      result_max = result_compute_vlue;
-      result_value = "A商品，价格为" + result_max + "元";
-    }
-    else if (result_compute_vlue > twotitle_result_compute_vlue && threetitle_result_compute_vlue > twotitle_result_compute_vlue && result_compute_vlue == threetitle_result_compute_vlue) {
-      result_max = result_compute_vlue;
-      result_value = "A和C商品，价格为" + result_max + "元";
-    }
-    else if (result_compute_vlue > twotitle_result_compute_vlue && result_compute_vlue < threetitle_result_compute_vlue) {
+    if (result_compute_vlue > twotitle_result_compute_vlue && twotitle_result_compute_vlue > threetitle_result_compute_vlue){
       result_max = threetitle_result_compute_vlue;
-      result_value = "C商品，价格为" + result_max + "元";
+      result_value = "C商品，价格为" + result_max+"元";
+    }
+    else if (result_compute_vlue > twotitle_result_compute_vlue && twotitle_result_compute_vlue == threetitle_result_compute_vlue) {
+      result_max = threetitle_result_compute_vlue;
+      result_value = "B和C商品，价格为" + result_max + "元";
+    }
+    else if (result_compute_vlue > twotitle_result_compute_vlue && threetitle_result_compute_vlue > twotitle_result_compute_vlue){
+      result_max = twotitle_result_compute_vlue;
+      result_value = "B商品，价格为" + result_max + "元";
     }
     else if (result_compute_vlue == twotitle_result_compute_vlue && threetitle_result_compute_vlue < twotitle_result_compute_vlue) {
-      result_max = result_compute_vlue;
-      result_value = "A和B商品，价格为" + result_max + "元";
+      result_max = threetitle_result_compute_vlue;
+      result_value = "C商品，价格为" + result_max + "元";
     }
     else if (result_compute_vlue == twotitle_result_compute_vlue && threetitle_result_compute_vlue == twotitle_result_compute_vlue) {
       result_max = result_compute_vlue;
       result_value = "A、B和C商品，价格为" + result_max + "元";
     } 
     else if (result_compute_vlue == twotitle_result_compute_vlue && threetitle_result_compute_vlue > twotitle_result_compute_vlue) {
+      result_max = twotitle_result_compute_vlue;
+      result_value = "A和B商品，价格为" + result_max + "元";
+    }
+    else if (result_compute_vlue < twotitle_result_compute_vlue && threetitle_result_compute_vlue < twotitle_result_compute_vlue && result_compute_vlue > threetitle_result_compute_vlue) {
       result_max = threetitle_result_compute_vlue;
       result_value = "C商品，价格为" + result_max + "元";
     }
-    else if (result_compute_vlue < twotitle_result_compute_vlue && threetitle_result_compute_vlue < twotitle_result_compute_vlue) {
-      result_max = twotitle_result_compute_vlue;
-      result_value = "B商品，价格为" + result_max + "元";
+    else if (result_compute_vlue < twotitle_result_compute_vlue && threetitle_result_compute_vlue < twotitle_result_compute_vlue&&result_compute_vlue == threetitle_result_compute_vlue) {
+      result_max = threetitle_result_compute_vlue;
+      result_value = "A和C商品，价格为" + result_max + "元";
+    }
+    else if (result_compute_vlue < twotitle_result_compute_vlue && threetitle_result_compute_vlue < twotitle_result_compute_vlue && result_compute_vlue < threetitle_result_compute_vlue) {
+      result_max = result_compute_vlue;
+      result_value = "A商品，价格为" + result_max + "元";
     }
     else if (result_compute_vlue < twotitle_result_compute_vlue && threetitle_result_compute_vlue == twotitle_result_compute_vlue) {
-      result_max = twotitle_result_compute_vlue;
-      result_value = "B和C商品，价格为" + result_max + "元";
+      result_max = result_compute_vlue;
+      result_value = "A商品，价格为" + result_max + "元";
     }
     else if (result_compute_vlue < twotitle_result_compute_vlue && threetitle_result_compute_vlue > twotitle_result_compute_vlue) {
-      result_max = threetitle_result_compute_vlue;
-      result_value = "C商品，价格为" + result_max + "元";
+      result_max = result_compute_vlue;
+      result_value = "A商品，价格为" + result_max + "元";
     } 
 
     result_ABC_price = "A商品" + result_compute_vlue + "；" + "B商品" + twotitle_result_compute_vlue + "；" + "C商品" + threetitle_result_compute_vlue
