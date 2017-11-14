@@ -913,34 +913,47 @@ Page({
   button_compute:function(e){
     
     if(condition_value1==1){
-       if(condition_value2==1){
-         result_compute_vlue = input_X
-       }
-       else if(condition_value2==2){
-         if (condition_value3 == 1) {
-           result_compute_vlue = Math.round(input_X / 1.03 * 1.17 * 100) / 100
 
+       if(condition_value2==1){
+         if(condition_value3==0){
+           result_compute_vlue=-1;
+         }else{
+           result_compute_vlue = input_X;
+         }
+       }
+
+       else if(condition_value2==2){
+
+         if (condition_value3 == 0) {
+           result_compute_vlue = -1
+         }
+         else if (condition_value3 == 1) {
+           result_compute_vlue = Math.round(input_X / 1.03 * 1.17 * 100) / 100
          }
          else {
            result_compute_vlue = input_X 
          }
          
-       }else if(condition_value2==3){
-         if (condition_value3 == 1) {
+       }
+       else if(condition_value2==3){
+         if (condition_value3 == 0) {
+           result_compute_vlue = -1
+         }
+         else if (condition_value3 == 1) {
            result_compute_vlue = Math.round((input_X - input_X / 1.03 * 0.03) * 100) / 100
-
          }
          else if (condition_value3 == 2) {
            result_compute_vlue = Math.round((input_X - input_X / 1.11 * 0.11) * 100) / 100
-
          }
          else {
            result_compute_vlue = Math.round((input_X - input_X / 1.17 * 0.17) * 100) / 100
-
          }
        }
        else if (condition_value2 == 4) {
-         if (condition_value3 == 1) {
+         if (condition_value3 == 0) {
+           result_compute_vlue = -1
+         }
+         else if (condition_value3 == 1) {
            result_compute_vlue = Math.round((input_X - condition_value3_B /condition_value3_A*input_X / 1.05 * 0.05) * 100) / 100
 
          }
@@ -948,15 +961,29 @@ Page({
            result_compute_vlue = Math.round((input_X - condition_value3_B / condition_value3_A * input_X / 1.11 * 0.11) * 100) / 100
 
          }
+       } else if (condition_value2 == 0) {
+         result_compute_vlue =-1
        }
     }
     else if (condition_value1 == 2){
-      if (condition_value2 == 1) {
-        result_compute_vlue = input_X
 
+      if (condition_value2==0){
+        result_compute_vlue=-1
       }
+
+      else if (condition_value2 == 1) {
+        if (condition_value3==0){
+          result_compute_vlue=-1
+        }else{
+          result_compute_vlue = input_X
+        }
+      }
+
       else if (condition_value2 == 2) {
-        if (condition_value3 == 1) {
+        if (condition_value3 == 0) {
+          result_compute_vlue = -1
+        } 
+        else if (condition_value3 == 1) {
           console.log("jisuan:" + input_X);
           result_compute_vlue = Math.round(input_X / 1.03 * 1.2*100)/100;
           console.log("result:" + result_compute_vlue);
@@ -973,19 +1000,55 @@ Page({
           result_compute_vlue = Math.round(input_X / 1.17 * 1.34 * 100) / 100;
 
         }
-      } else if (condition_value2 == 3) {
-        result_compute_vlue = input_X
+      } 
+      else if (condition_value2 == 3) {
+        if (condition_value3 == 0) {
+          result_compute_vlue = -1
+        }
+        else{
+          result_compute_vlue = input_X
+        }
 
       }
-      else if (condition_text_value2 == 4) {
-        result_compute_vlue = input_X
+      else if (condition_value2 == 4) {
+        if (condition_value3 == 0) {
+          result_compute_vlue = -1
+        }
+        else{
+          result_compute_vlue = input_X
+        }
       }
-    } else if (condition_value1 == 3){
-      if (condition_value2 == 2){
-        result_compute_vlue = Math.round(input_X / 1.17 * 1.34 * 100) / 100;
-      }else{
-        result_compute_vlue = input_X
+    } 
+    else if (condition_value1 == 3){
+      if (condition_value2 == 0) {
+        result_compute_vlue = -1
       }
+      else if (condition_value2 == 2){
+        if (condition_value3 == 0) {
+          result_compute_vlue = -1
+        }
+        else{
+          result_compute_vlue = Math.round(input_X / 1.17 * 1.34 * 100) / 100;
+        }
+      }
+      else{
+        if (condition_value3 == 0) {
+          result_compute_vlue = -1
+        }
+        else {
+          result_compute_vlue = input_X;
+        }
+      }
+    } 
+    else if (condition_value1==0){
+      if (input_X == 0 && condition_value2 == 0 && condition_value3 == 0 && condition_value3_A==0&&condition_value3_B==0){
+        // 这种情况代表的是条件一个都没填的情况
+        result_compute_vlue = 0;
+      } else {
+       // 这种情况代表的是条件有一个填的情况
+        result_compute_vlue = -1;
+      }
+     
     }
 
 
@@ -993,34 +1056,47 @@ Page({
   
 
     if (twotitle_condition_value1 == 1) {
-      if (twotitle_condition_value2 == 1) {
-        twotitle_result_compute_vlue = twotitle_input_X
-      }
-      else if (twotitle_condition_value2 == 2) {
-        if (twotitle_condition_value3 == 1) {
-          twotitle_result_compute_vlue = Math.round(twotitle_input_X / 1.03 * 1.17 * 100) / 100
 
+      if (twotitle_condition_value2 == 1) {
+        if (twotitle_condition_value3 == 0) {
+          twotitle_result_compute_vlue = -1;
+        } else {
+          twotitle_result_compute_vlue = twotitle_input_X;
+        }
+      }
+
+      else if (twotitle_condition_value2 == 2) {
+
+        if (twotitle_condition_value3 == 0) {
+          twotitle_result_compute_vlue = -1
+        }
+        else if (twotitle_condition_value3 == 1) {
+          twotitle_result_compute_vlue = Math.round(twotitle_input_X / 1.03 * 1.17 * 100) / 100
         }
         else {
           twotitle_result_compute_vlue = twotitle_input_X
         }
 
-      } else if (twotitle_condition_value2 == 3) {
-        if (twotitle_condition_value3 == 1) {
+      }
+      else if (twotitle_condition_value2 == 3) {
+        if (twotitle_condition_value3 == 0) {
+          twotitle_result_compute_vlue = -1
+        }
+        else if (twotitle_condition_value3 == 1) {
           twotitle_result_compute_vlue = Math.round((twotitle_input_X - twotitle_input_X / 1.03 * 0.03) * 100) / 100
-
         }
         else if (twotitle_condition_value3 == 2) {
           twotitle_result_compute_vlue = Math.round((twotitle_input_X - twotitle_input_X / 1.11 * 0.11) * 100) / 100
-
         }
         else {
           twotitle_result_compute_vlue = Math.round((twotitle_input_X - twotitle_input_X / 1.17 * 0.17) * 100) / 100
-
         }
       }
       else if (twotitle_condition_value2 == 4) {
-        if (twotitle_condition_value3 == 1) {
+        if (twotitle_condition_value3 == 0) {
+          twotitle_result_compute_vlue = -1
+        }
+        else if (twotitle_condition_value3 == 1) {
           twotitle_result_compute_vlue = Math.round((twotitle_input_X - twotitle_condition_value3_B / twotitle_condition_value3_A * twotitle_input_X / 1.05 * 0.05) * 100) / 100
 
         }
@@ -1028,18 +1104,32 @@ Page({
           twotitle_result_compute_vlue = Math.round((twotitle_input_X - twotitle_condition_value3_B / twotitle_condition_value3_A * twotitle_input_X / 1.11 * 0.11) * 100) / 100
 
         }
+      } else if (twotitle_condition_value2 == 0) {
+        twotitle_result_compute_vlue = -1
       }
     }
     else if (twotitle_condition_value1 == 2) {
-      if (twotitle_condition_value2 == 1) {
-        twotitle_result_compute_vlue = twotitle_input_X
 
+      if (twotitle_condition_value2 == 0) {
+        twotitle_result_compute_vlue = -1
       }
+
+      else if (twotitle_condition_value2 == 1) {
+        if (twotitle_condition_value3 == 0) {
+          twotitle_result_compute_vlue = -1
+        } else {
+          twotitle_result_compute_vlue = twotitle_input_X
+        }
+      }
+
       else if (twotitle_condition_value2 == 2) {
-        if (twotitle_condition_value3 == 1) {
+        if (twotitle_condition_value3 == 0) {
+          twotitle_result_compute_vlue = -1
+        }
+        else if (twotitle_condition_value3 == 1) {
           console.log("twotitle_jisuan:" + twotitle_input_X);
           twotitle_result_compute_vlue = Math.round(twotitle_input_X / 1.03 * 1.2 * 100) / 100;
-          console.log("twotitle_result:" + twotitle_result_compute_vlue);
+          console.log("result:" + twotitle_result_compute_vlue);
         }
         else if (twotitle_condition_value3 == 2) {
           twotitle_result_compute_vlue = Math.round(twotitle_input_X / 1.06 * 100) / 100;
@@ -1053,19 +1143,55 @@ Page({
           twotitle_result_compute_vlue = Math.round(twotitle_input_X / 1.17 * 1.34 * 100) / 100;
 
         }
-      } else if (twotitle_condition_value2 == 3) {
-        twotitle_result_compute_vlue = twotitle_input_X
+      }
+      else if (twotitle_condition_value2 == 3) {
+        if (twotitle_condition_value3 == 0) {
+          twotitle_result_compute_vlue = -1
+        }
+        else {
+          twotitle_result_compute_vlue = twotitle_input_X
+        }
 
       }
-      else if (twotitle_condition_text_value2 == 4) {
-        twotitle_result_compute_vlue = twotitle_input_X
+      else if (twotitle_condition_value2 == 4) {
+        if (twotitle_condition_value3 == 0) {
+          twotitle_result_compute_vlue = -1
+        }
+        else {
+          twotitle_result_compute_vlue = twotitle_input_X
+        }
       }
-    } else if (twotitle_condition_value1 == 3){
-      if (twotitle_condition_value2 == 2) {
-        twotitle_result_compute_vlue = Math.round(twotitle_input_X / 1.17 * 1.34 * 100) / 100;
+    }
+    else if (twotitle_condition_value1 == 3) {
+      if (twotitle_condition_value2 == 0) {
+        twotitle_result_compute_vlue = -1
+      }
+      else if (twotitle_condition_value2 == 2) {
+        if (twotitle_condition_value3 == 0) {
+          twotitle_result_compute_vlue = -1
+        }
+        else {
+          twotitle_result_compute_vlue = Math.round(twotitle_input_X / 1.17 * 1.34 * 100) / 100;
+        }
+      }
+      else {
+        if (twotitle_condition_value3 == 0) {
+          twotitle_result_compute_vlue = -1
+        }
+        else {
+          twotitle_result_compute_vlue = twotitle_input_X;
+        }
+      }
+    }
+    else if (twotitle_condition_value1 == 0) {
+      if (twotitle_input_X == 0 && twotitle_condition_value2 == 0 && twotitle_condition_value3 == 0 && twotitle_condition_value3_A == 0 && twotitle_condition_value3_B == 0) {
+        // 这种情况代表的是条件一个都没填的情况
+        twotitle_result_compute_vlue = 0;
       } else {
-        twotitle_result_compute_vlue = twotitle_input_X
+        // 这种情况代表的是条件有一个填的情况
+        twotitle_result_compute_vlue = -1;
       }
+
     }
 
 
@@ -1076,34 +1202,47 @@ Page({
 
 
     if (threetitle_condition_value1 == 1) {
-      if (threetitle_condition_value2 == 1) {
-        threetitle_result_compute_vlue = threetitle_input_X
-      }
-      else if (threetitle_condition_value2 == 2) {
-        if (threetitle_condition_value3 == 1) {
-          threetitle_result_compute_vlue = Math.round(threetitle_input_X / 1.03 * 1.17 * 100) / 100
 
+      if (threetitle_condition_value2 == 1) {
+        if (threetitle_condition_value3 == 0) {
+          threetitle_result_compute_vlue = -1;
+        } else {
+          threetitle_result_compute_vlue = threetitle_input_X;
+        }
+      }
+
+      else if (threetitle_condition_value2 == 2) {
+
+        if (threetitle_condition_value3 == 0) {
+          threetitle_result_compute_vlue = -1
+        }
+        else if (threetitle_condition_value3 == 1) {
+          threetitle_result_compute_vlue = Math.round(threetitle_input_X / 1.03 * 1.17 * 100) / 100
         }
         else {
           threetitle_result_compute_vlue = threetitle_input_X
         }
 
-      } else if (threetitle_condition_value2 == 3) {
-        if (threetitle_condition_value3 == 1) {
+      }
+      else if (threetitle_condition_value2 == 3) {
+        if (threetitle_condition_value3 == 0) {
+          threetitle_result_compute_vlue = -1
+        }
+        else if (threetitle_condition_value3 == 1) {
           threetitle_result_compute_vlue = Math.round((threetitle_input_X - threetitle_input_X / 1.03 * 0.03) * 100) / 100
-
         }
         else if (threetitle_condition_value3 == 2) {
           threetitle_result_compute_vlue = Math.round((threetitle_input_X - threetitle_input_X / 1.11 * 0.11) * 100) / 100
-
         }
         else {
           threetitle_result_compute_vlue = Math.round((threetitle_input_X - threetitle_input_X / 1.17 * 0.17) * 100) / 100
-
         }
       }
       else if (threetitle_condition_value2 == 4) {
-        if (threetitle_condition_value3 == 1) {
+        if (threetitle_condition_value3 == 0) {
+          threetitle_result_compute_vlue = -1
+        }
+        else if (threetitle_condition_value3 == 1) {
           threetitle_result_compute_vlue = Math.round((threetitle_input_X - threetitle_condition_value3_B / threetitle_condition_value3_A * threetitle_input_X / 1.05 * 0.05) * 100) / 100
 
         }
@@ -1111,18 +1250,32 @@ Page({
           threetitle_result_compute_vlue = Math.round((threetitle_input_X - threetitle_condition_value3_B / threetitle_condition_value3_A * threetitle_input_X / 1.11 * 0.11) * 100) / 100
 
         }
+      } else if (threetitle_condition_value2 == 0) {
+        threetitle_result_compute_vlue = -1
       }
     }
     else if (threetitle_condition_value1 == 2) {
-      if (threetitle_condition_value2 == 1) {
-        threetitle_result_compute_vlue = threetitle_input_X
 
+      if (threetitle_condition_value2 == 0) {
+        threetitle_result_compute_vlue = -1
       }
+
+      else if (threetitle_condition_value2 == 1) {
+        if (threetitle_condition_value3 == 0) {
+          threetitle_result_compute_vlue = -1
+        } else {
+          threetitle_result_compute_vlue = threetitle_input_X
+        }
+      }
+
       else if (threetitle_condition_value2 == 2) {
-        if (threetitle_condition_value3 == 1) {
+        if (threetitle_condition_value3 == 0) {
+          threetitle_result_compute_vlue = -1
+        }
+        else if (threetitle_condition_value3 == 1) {
           console.log("threetitle_jisuan:" + threetitle_input_X);
           threetitle_result_compute_vlue = Math.round(threetitle_input_X / 1.03 * 1.2 * 100) / 100;
-          console.log("threetitle_result:" + threetitle_result_compute_vlue);
+          console.log("result:" + threetitle_result_compute_vlue);
         }
         else if (threetitle_condition_value3 == 2) {
           threetitle_result_compute_vlue = Math.round(threetitle_input_X / 1.06 * 100) / 100;
@@ -1136,19 +1289,55 @@ Page({
           threetitle_result_compute_vlue = Math.round(threetitle_input_X / 1.17 * 1.34 * 100) / 100;
 
         }
-      } else if (threetitle_condition_value2 == 3) {
-        threetitle_result_compute_vlue = threetitle_input_X
+      }
+      else if (threetitle_condition_value2 == 3) {
+        if (threetitle_condition_value3 == 0) {
+          threetitle_result_compute_vlue = -1
+        }
+        else {
+          threetitle_result_compute_vlue = threetitle_input_X
+        }
 
       }
-      else if (threetitle_condition_text_value2 == 4) {
-        threetitle_result_compute_vlue = threetitle_input_X
+      else if (threetitle_condition_value2 == 4) {
+        if (threetitle_condition_value3 == 0) {
+          threetitle_result_compute_vlue = -1
+        }
+        else {
+          threetitle_result_compute_vlue = threetitle_input_X
+        }
       }
-    } else if (threetitle_condition_value1 == 3){
-      if (threetitle_condition_value2 == 2) {
-        threetitle_result_compute_vlue = Math.round(threetitle_input_X / 1.17 * 1.34 * 100) / 100;
+    }
+    else if (threetitle_condition_value1 == 3) {
+      if (threetitle_condition_value2 == 0) {
+        threetitle_result_compute_vlue = -1
+      }
+      else if (threetitle_condition_value2 == 2) {
+        if (threetitle_condition_value3 == 0) {
+          threetitle_result_compute_vlue = -1
+        }
+        else {
+          threetitle_result_compute_vlue = Math.round(threetitle_input_X / 1.17 * 1.34 * 100) / 100;
+        }
+      }
+      else {
+        if (threetitle_condition_value3 == 0) {
+          threetitle_result_compute_vlue = -1
+        }
+        else {
+          threetitle_result_compute_vlue = threetitle_input_X;
+        }
+      }
+    }
+    else if (threetitle_condition_value1 == 0) {
+      if (threetitle_input_X == 0 && threetitle_condition_value2 == 0 && threetitle_condition_value3 == 0 && threetitle_condition_value3_A == 0 && threetitle_condition_value3_B == 0) {
+        // 这种情况代表的是条件一个都没填的情况
+        threetitle_result_compute_vlue = 0;
       } else {
-        threetitle_result_compute_vlue = threetitle_input_X
+        // 这种情况代表的是条件有一个填的情况
+        threetitle_result_compute_vlue = -1;
       }
+
     }
 
 
@@ -1157,52 +1346,124 @@ Page({
 
     console.log(result_compute_vlue + ";" + twotitle_result_compute_vlue + ";" + threetitle_result_compute_vlue);
     // 比较A B C三个商品的大小
-    if (result_compute_vlue > twotitle_result_compute_vlue && twotitle_result_compute_vlue > threetitle_result_compute_vlue){
-      result_max = threetitle_result_compute_vlue;
-      result_value = "C商品，价格为" + result_max+"元";
+    if (result_compute_vlue > 0 && twotitle_result_compute_vlue > 0&& threetitle_result_compute_vlue>0){
+      if (result_compute_vlue > twotitle_result_compute_vlue && twotitle_result_compute_vlue > threetitle_result_compute_vlue) {
+        result_max = threetitle_result_compute_vlue;
+        result_value = "C商品，价格为" + result_max + "元";
+      }
+      else if (result_compute_vlue > twotitle_result_compute_vlue && twotitle_result_compute_vlue == threetitle_result_compute_vlue) {
+        result_max = threetitle_result_compute_vlue;
+        result_value = "B和C商品，价格为" + result_max + "元";
+      }
+      else if (result_compute_vlue > twotitle_result_compute_vlue && threetitle_result_compute_vlue > twotitle_result_compute_vlue) {
+        result_max = twotitle_result_compute_vlue;
+        result_value = "B商品，价格为" + result_max + "元";
+      }
+      else if (result_compute_vlue == twotitle_result_compute_vlue && threetitle_result_compute_vlue < twotitle_result_compute_vlue) {
+        result_max = threetitle_result_compute_vlue;
+        result_value = "C商品，价格为" + result_max + "元";
+      }
+      else if (result_compute_vlue == twotitle_result_compute_vlue && threetitle_result_compute_vlue == twotitle_result_compute_vlue) {
+        result_max = result_compute_vlue;
+        result_value = "A、B和C商品，价格为" + result_max + "元";
+      }
+      else if (result_compute_vlue == twotitle_result_compute_vlue && threetitle_result_compute_vlue > twotitle_result_compute_vlue) {
+        result_max = twotitle_result_compute_vlue;
+        result_value = "A和B商品，价格为" + result_max + "元";
+      }
+      else if (result_compute_vlue < twotitle_result_compute_vlue && threetitle_result_compute_vlue < twotitle_result_compute_vlue && result_compute_vlue > threetitle_result_compute_vlue) {
+        result_max = threetitle_result_compute_vlue;
+        result_value = "C商品，价格为" + result_max + "元";
+      }
+      else if (result_compute_vlue < twotitle_result_compute_vlue && threetitle_result_compute_vlue < twotitle_result_compute_vlue && result_compute_vlue == threetitle_result_compute_vlue) {
+        result_max = threetitle_result_compute_vlue;
+        result_value = "A和C商品，价格为" + result_max + "元";
+      }
+      else if (result_compute_vlue < twotitle_result_compute_vlue && threetitle_result_compute_vlue < twotitle_result_compute_vlue && result_compute_vlue < threetitle_result_compute_vlue) {
+        result_max = result_compute_vlue;
+        result_value = "A商品，价格为" + result_max + "元";
+      }
+      else if (result_compute_vlue < twotitle_result_compute_vlue && threetitle_result_compute_vlue == twotitle_result_compute_vlue) {
+        result_max = result_compute_vlue;
+        result_value = "A商品，价格为" + result_max + "元";
+      }
+      else if (result_compute_vlue < twotitle_result_compute_vlue && threetitle_result_compute_vlue > twotitle_result_compute_vlue) {
+        result_max = result_compute_vlue;
+        result_value = "A商品，价格为" + result_max + "元";
+      } 
+      result_ABC_price = "A商品" + result_compute_vlue + "；" + "B商品" + twotitle_result_compute_vlue + "；" + "C商品" + threetitle_result_compute_vlue
     }
-    else if (result_compute_vlue > twotitle_result_compute_vlue && twotitle_result_compute_vlue == threetitle_result_compute_vlue) {
-      result_max = threetitle_result_compute_vlue;
-      result_value = "B和C商品，价格为" + result_max + "元";
-    }
-    else if (result_compute_vlue > twotitle_result_compute_vlue && threetitle_result_compute_vlue > twotitle_result_compute_vlue){
-      result_max = twotitle_result_compute_vlue;
-      result_value = "B商品，价格为" + result_max + "元";
-    }
-    else if (result_compute_vlue == twotitle_result_compute_vlue && threetitle_result_compute_vlue < twotitle_result_compute_vlue) {
-      result_max = threetitle_result_compute_vlue;
-      result_value = "C商品，价格为" + result_max + "元";
-    }
-    else if (result_compute_vlue == twotitle_result_compute_vlue && threetitle_result_compute_vlue == twotitle_result_compute_vlue) {
-      result_max = result_compute_vlue;
-      result_value = "A、B和C商品，价格为" + result_max + "元";
-    } 
-    else if (result_compute_vlue == twotitle_result_compute_vlue && threetitle_result_compute_vlue > twotitle_result_compute_vlue) {
-      result_max = twotitle_result_compute_vlue;
-      result_value = "A和B商品，价格为" + result_max + "元";
-    }
-    else if (result_compute_vlue < twotitle_result_compute_vlue && threetitle_result_compute_vlue < twotitle_result_compute_vlue && result_compute_vlue > threetitle_result_compute_vlue) {
-      result_max = threetitle_result_compute_vlue;
-      result_value = "C商品，价格为" + result_max + "元";
-    }
-    else if (result_compute_vlue < twotitle_result_compute_vlue && threetitle_result_compute_vlue < twotitle_result_compute_vlue&&result_compute_vlue == threetitle_result_compute_vlue) {
-      result_max = threetitle_result_compute_vlue;
-      result_value = "A和C商品，价格为" + result_max + "元";
-    }
-    else if (result_compute_vlue < twotitle_result_compute_vlue && threetitle_result_compute_vlue < twotitle_result_compute_vlue && result_compute_vlue < threetitle_result_compute_vlue) {
-      result_max = result_compute_vlue;
-      result_value = "A商品，价格为" + result_max + "元";
-    }
-    else if (result_compute_vlue < twotitle_result_compute_vlue && threetitle_result_compute_vlue == twotitle_result_compute_vlue) {
-      result_max = result_compute_vlue;
-      result_value = "A商品，价格为" + result_max + "元";
-    }
-    else if (result_compute_vlue < twotitle_result_compute_vlue && threetitle_result_compute_vlue > twotitle_result_compute_vlue) {
-      result_max = result_compute_vlue;
-      result_value = "A商品，价格为" + result_max + "元";
-    } 
+    
+    else{
+      if (result_compute_vlue <= 0 && twotitle_result_compute_vlue > 0 && threetitle_result_compute_vlue>0){
+        if (twotitle_result_compute_vlue > threetitle_result_compute_vlue){
+          result_max = threetitle_result_compute_vlue;
+          result_value = "C商品，价格为" + result_max + "元";
+        }
+        else if (twotitle_result_compute_vlue == threetitle_result_compute_vlue){
+          result_max = threetitle_result_compute_vlue;
+          result_value = "B和C商品，价格为" + result_max + "元";
+        }else{
+          result_max = twotitle_result_compute_vlue;
+          result_value = "B商品，价格为" + result_max + "元";
+        }
+        result_ABC_price = "A商品无结果" + "；" + "B商品" + twotitle_result_compute_vlue + "；" + "C商品" + threetitle_result_compute_vlue
 
-    result_ABC_price = "A商品" + result_compute_vlue + "；" + "B商品" + twotitle_result_compute_vlue + "；" + "C商品" + threetitle_result_compute_vlue
+      }
+      else if (twotitle_result_compute_vlue <= 0&&result_compute_vlue > 0 && threetitle_result_compute_vlue > 0){
+        if (result_compute_vlue > threetitle_result_compute_vlue){
+          result_max = threetitle_result_compute_vlue;
+          result_value = "C商品，价格为" + result_max + "元";
+        } 
+        else if (result_compute_vlue == threetitle_result_compute_vlue){
+          result_max = threetitle_result_compute_vlue;
+          result_value = "A和C商品，价格为" + result_max + "元";
+        } 
+        else {
+          result_max = result_compute_vlue;
+          result_value = "A商品，价格为" + result_max + "元";
+        }
+        result_ABC_price = "A商品" + result_compute_vlue + "；" + "B商品无结果"  + "；" + "C商品" + threetitle_result_compute_vlue
+      }
+      else if (threetitle_result_compute_vlue <= 0 && twotitle_result_compute_vlue > 0 && result_compute_vlue > 0){
+        if (twotitle_result_compute_vlue >  result_compute_vlue){
+          result_max = result_compute_vlue;
+          result_value = "A商品，价格为" + result_max + "元";
+        } 
+        else if (twotitle_result_compute_vlue == result_compute_vlue){
+          result_max = result_compute_vlue;
+          result_value = "A和B商品，价格为" + result_max + "元";
+        } 
+        else {
+          result_max = twotitle_result_compute_vlue;
+          result_value = "B商品，价格为" + result_max + "元";
+        }
+        result_ABC_price = "A商品" + result_compute_vlue + "；" + "B商品" + twotitle_result_compute_vlue + "；" + "C商品无结果"
+      }
+      else if (result_compute_vlue <= 0 && twotitle_result_compute_vlue <= 0 && threetitle_result_compute_vlue > 0){
+        result_max = threetitle_result_compute_vlue;
+        result_value = "C商品，价格为" + result_max + "元";
+        result_ABC_price = "A和B商品无结果" + "；" + "C商品" + threetitle_result_compute_vlue
+      }
+      else if (result_compute_vlue <= 0 && threetitle_result_compute_vlue <= 0 && twotitle_result_compute_vlue > 0){
+        result_max = twotitle_result_compute_vlue;
+        result_value = "B商品，价格为" + result_max + "元";
+        result_ABC_price = "A和C商品无结果"  + "；" + "B商品" + twotitle_result_compute_vlue
+      }
+      else if (twotitle_result_compute_vlue <= 0 && threetitle_result_compute_vlue <= 0 && result_compute_vlue>0){
+        result_max = result_compute_vlue;
+        result_value = "A商品，价格为" + result_max + "元";
+        result_ABC_price = "B和C商品无结果" + "；" + "A商品" + result_compute_vlue
+      }
+      else if (result_compute_vlue <= 0&&twotitle_result_compute_vlue <= 0&&threetitle_result_compute_vlue<= 0){
+        result_max = 0;
+        result_value = "无" ;
+        result_ABC_price = "A、B和C均无结果"
+      }
+    }
+    
+
+    
     // result_value = result_compute_vlue + " (" + condition_text_value1 + ";  " + condition_text_value3 + ")";
     this.setData({
       result_text: result_value,
