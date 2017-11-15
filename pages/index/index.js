@@ -2,17 +2,17 @@
 //获取应用实例
 var app = getApp();
 var input_X=0;
-var condition_value1;
+var condition_value1=0;
 var condition_text_value1 = "";
-var condition_value2;
+var condition_value2=0;
 var condition_text_value2 = "";
-var condition_value3;
+var condition_value3=0;
 var condition_text_value3 = "";
-var condition_value3_Y;
+var condition_value3_Y=0;
 var condition_text_valueY = "";
-var condition_value3_A;
+var condition_value3_A=0;
 var condition_text_valueA = "";
-var condition_value3_B;
+var condition_value3_B=0;
 var condition_text_valueB = "";
 var condition_array_one = ['3%', '6%', '11%', '17%'];
 var condition_array_two = ['3%', '11%', '17%'];
@@ -26,17 +26,17 @@ var result_ABC_price="";
 
 
 var twotitle_input_X=0;
-var twotitle_condition_value1;
+var twotitle_condition_value1=0;
 var twotitle_condition_text_value1 = "";
-var twotitle_condition_value2;
+var twotitle_condition_value2=0;
 var twotitle_condition_text_value2 = "";
-var twotitle_condition_value3;
+var twotitle_condition_value3=0;
 var twotitle_condition_text_value3 = "";
-var twotitle_condition_value3_Y;
+var twotitle_condition_value3_Y=0;
 var twotitle_condition_text_valueY = "";
-var twotitle_condition_value3_A;
+var twotitle_condition_value3_A=0;
 var twotitle_condition_text_valueA = "";
-var twotitle_condition_value3_B;
+var twotitle_condition_value3_B=0;
 var twotitle_condition_text_valueB = "";
 var twotitle_condition_array_one = ['3%', '6%', '11%', '17%'];
 var twotitle_condition_array_two = ['3%', '11%', '17%'];
@@ -47,17 +47,17 @@ var twotitle_result_compute_vlue = "";
 
 
 var threetitle_input_X=0;
-var threetitle_condition_value1;
+var threetitle_condition_value1=0;
 var threetitle_condition_text_value1 = "";
-var threetitle_condition_value2;
+var threetitle_condition_value2=0;
 var threetitle_condition_text_value2 = "";
-var threetitle_condition_value3;
+var threetitle_condition_value3=0;
 var threetitle_condition_text_value3 = "";
 var threetitle_condition_value3_Y;
 var threetitle_condition_text_valueY = "";
-var threetitle_condition_value3_A;
+var threetitle_condition_value3_A=0;
 var threetitle_condition_text_valueA = "";
-var threetitle_condition_value3_B;
+var threetitle_condition_value3_B=0;
 var threetitle_condition_text_valueB = "";
 var threetitle_condition_array_one = ['3%', '6%', '11%', '17%'];
 var threetitle_condition_array_two = ['3%', '11%', '17%'];
@@ -230,6 +230,8 @@ Page({
         })
       }
     }
+    condition_value3 = 0;//由于重新布局列表，需要给赋予一个初始值，否则会是上次选中的值
+
   },
 
 
@@ -274,7 +276,7 @@ Page({
         array_three: ['无'],
       })
     }
-    
+    condition_value3 = 0;//由于重新布局列表，需要给赋予一个初始值，否则会是上次选中的值
 
     //动态设置布局
     if (condition_value1 == 1 && condition_value2 == 3) {
@@ -394,7 +396,12 @@ Page({
   // },
 
   input_two_price: function (e) {
-    condition_value3_A = e.detail.value;
+    if (e.detail.value==""){
+      condition_value3_A=0;
+    }else{
+      condition_value3_A = e.detail.value;
+    }
+    
     console.log(condition_value3_A);
     this.setData({
       input_two_price_value: e.detail.value
@@ -402,7 +409,11 @@ Page({
   },
 
   input_three_price: function (e) {
-    condition_value3_B = e.detail.value;
+    if (e.detail.value == "") {
+      condition_value3_B = 0;
+    } else {
+      condition_value3_B = e.detail.value;
+    }
     console.log(condition_value3_B);
     this.setData({
       input_three_price_value: e.detail.value
@@ -509,6 +520,8 @@ Page({
         })
       }
     }
+    twotitle_condition_value3 = 0;//由于重新布局列表，需要给赋予一个初始值，否则会是上次选中的值
+
   },
 
 
@@ -553,6 +566,7 @@ Page({
         twotitle_array_three: ['无'],
       })
     }
+    twotitle_condition_value3 = 0;//由于重新布局列表，需要给赋予一个初始值，否则会是上次选中的值
 
 
     //动态设置布局
@@ -638,7 +652,12 @@ Page({
   },
 
   twotitle_input_two_price: function (e) {
-    twotitle_condition_value3_A = e.detail.value;
+    if (e.detail.value == "") {
+      twotitle_condition_value3_A = 0;
+    } else {
+      twotitle_condition_value3_A = e.detail.value;
+    }
+
     console.log(twotitle_condition_value3_A);
     this.setData({
       twotitle_input_two_price_value: e.detail.value
@@ -646,7 +665,11 @@ Page({
   },
 
   twotitle_input_three_price: function (e) {
-    twotitle_condition_value3_B = e.detail.value;
+    if (e.detail.value == "") {
+      twotitle_condition_value3_B = 0;
+    } else {
+      twotitle_condition_value3_B = e.detail.value;
+    }
     console.log(twotitle_condition_value3_B);
     this.setData({
       twotitle_input_three_price_value: e.detail.value
@@ -753,6 +776,8 @@ Page({
         })
       }
     }
+    threetitle_condition_value3 = 0;//由于重新布局列表，需要给赋予一个初始值，否则会是上次选中的值
+
   },
 
 
@@ -797,6 +822,7 @@ Page({
         threetitle_array_three: ['无'],
       })
     }
+    threetitle_condition_value3 = 0;//由于重新布局列表，需要给赋予一个初始值，否则会是上次选中的值
 
 
     //动态设置布局
@@ -891,16 +917,23 @@ Page({
   // },
 
   threetitle_input_two_price: function (e) {
-    threetitle_condition_value3_A = e.detail.value;
-    console.log(threetitle_condition_value3_A);
+    if (e.detail.value == "") {
+      threetitle_condition_value3_A = 0;
+    } else {
+      threetitle_condition_value3_A = e.detail.value;
+    }
+    
     this.setData({
       threetitle_input_two_price_value: e.detail.value
     });
   },
 
   threetitle_input_three_price: function (e) {
-    threetitle_condition_value3_B = e.detail.value;
-    console.log(threetitle_condition_value3_B);
+    if (e.detail.value == "") {
+      threetitle_condition_value3_B = 0;
+    } else {
+      threetitle_condition_value3_B = e.detail.value;
+    }
     this.setData({
       threetitle_input_three_price_value: e.detail.value
     });
@@ -954,14 +987,21 @@ Page({
            result_compute_vlue = -1
          }
          else if (condition_value3 == 1) {
-           result_compute_vlue = Math.round((input_X - condition_value3_B /condition_value3_A*input_X / 1.05 * 0.05) * 100) / 100
-
+           if (condition_value3_A==0){
+             result_compute_vlue=-1;
+           }else{
+             result_compute_vlue = Math.round((input_X - condition_value3_B / condition_value3_A * input_X / 1.05 * 0.05) * 100) / 100
+           }
          }
          else {
-           result_compute_vlue = Math.round((input_X - condition_value3_B / condition_value3_A * input_X / 1.11 * 0.11) * 100) / 100
-
+           if (condition_value3_A == 0) {
+             result_compute_vlue = -1;
+           } else {
+             result_compute_vlue = Math.round((input_X - condition_value3_B / condition_value3_A * input_X / 1.11 * 0.11) * 100) / 100;
+           }
          }
-       } else if (condition_value2 == 0) {
+       } 
+       else if (condition_value2 == 0) {
          result_compute_vlue =-1
        }
     }
@@ -989,11 +1029,11 @@ Page({
           console.log("result:" + result_compute_vlue);
         }
         else if (condition_value3 == 2) {
-          result_compute_vlue = Math.round(input_X / 1.06 * 100) / 100;
+          result_compute_vlue = Math.round(input_X / 1.06 * 1.12*100) / 100;
 
         }
         else if (condition_value3 == 3) {
-          result_compute_vlue = (input_X / 1.11 * 1.22).toFixed();
+          result_compute_vlue = Math.round(input_X / 1.11 * 1.22*100)/100;
 
         }
         else{
@@ -1058,6 +1098,7 @@ Page({
     if (twotitle_condition_value1 == 1) {
 
       if (twotitle_condition_value2 == 1) {
+        console.log("================" + twotitle_condition_value3);
         if (twotitle_condition_value3 == 0) {
           twotitle_result_compute_vlue = -1;
         } else {
@@ -1097,12 +1138,18 @@ Page({
           twotitle_result_compute_vlue = -1
         }
         else if (twotitle_condition_value3 == 1) {
-          twotitle_result_compute_vlue = Math.round((twotitle_input_X - twotitle_condition_value3_B / twotitle_condition_value3_A * twotitle_input_X / 1.05 * 0.05) * 100) / 100
-
+          if (twotitle_condition_value3_A == 0) {
+            twotitle_result_compute_vlue = -1;
+          } else {
+            twotitle_result_compute_vlue = Math.round((twotitle_input_X - twotitle_condition_value3_B / twotitle_condition_value3_A * twotitle_input_X / 1.05 * 0.05) * 100) / 100
+          }
         }
         else {
+          if (twotitle_condition_value3_A == 0) {
+            twotitle_result_compute_vlue = -1;
+          } else {
           twotitle_result_compute_vlue = Math.round((twotitle_input_X - twotitle_condition_value3_B / twotitle_condition_value3_A * twotitle_input_X / 1.11 * 0.11) * 100) / 100
-
+          }
         }
       } else if (twotitle_condition_value2 == 0) {
         twotitle_result_compute_vlue = -1
@@ -1132,11 +1179,11 @@ Page({
           console.log("result:" + twotitle_result_compute_vlue);
         }
         else if (twotitle_condition_value3 == 2) {
-          twotitle_result_compute_vlue = Math.round(twotitle_input_X / 1.06 * 100) / 100;
+          twotitle_result_compute_vlue = Math.round(twotitle_input_X / 1.06 *1.12* 100) / 100;
 
         }
         else if (twotitle_condition_value3 == 3) {
-          twotitle_result_compute_vlue = (twotitle_input_X / 1.11 * 1.22).toFixed();
+          twotitle_result_compute_vlue = Math.round(twotitle_input_X / 1.11 * 1.22*100)/100;
 
         }
         else {
@@ -1243,12 +1290,18 @@ Page({
           threetitle_result_compute_vlue = -1
         }
         else if (threetitle_condition_value3 == 1) {
+          if (threetitle_condition_value3_A == 0) {
+            threetitle_result_compute_vlue = -1;
+          } else {
           threetitle_result_compute_vlue = Math.round((threetitle_input_X - threetitle_condition_value3_B / threetitle_condition_value3_A * threetitle_input_X / 1.05 * 0.05) * 100) / 100
-
+          }
         }
         else {
+          if (threetitle_condition_value3_A == 0) {
+            threetitle_result_compute_vlue = -1;
+          } else {
           threetitle_result_compute_vlue = Math.round((threetitle_input_X - threetitle_condition_value3_B / threetitle_condition_value3_A * threetitle_input_X / 1.11 * 0.11) * 100) / 100
-
+          }
         }
       } else if (threetitle_condition_value2 == 0) {
         threetitle_result_compute_vlue = -1
@@ -1278,11 +1331,11 @@ Page({
           console.log("result:" + threetitle_result_compute_vlue);
         }
         else if (threetitle_condition_value3 == 2) {
-          threetitle_result_compute_vlue = Math.round(threetitle_input_X / 1.06 * 100) / 100;
+          threetitle_result_compute_vlue = Math.round(threetitle_input_X / 1.06 *1.12* 100) / 100;
 
         }
         else if (threetitle_condition_value3 == 3) {
-          threetitle_result_compute_vlue = (threetitle_input_X / 1.11 * 1.22).toFixed();
+          threetitle_result_compute_vlue = Math.round(threetitle_input_X / 1.11 * 1.22*100)/100;
 
         }
         else {
