@@ -70,7 +70,7 @@ Page({
   data: {
     input_price_value:"",
     array_one: ['请选择', '增值税专用发票', '增值税普通发票','其他'],
-    array_two: ['请选择', '金融服务（营业用）', '视同销售', '购进/租入有形动产用于出租/转租','购进/租入不动产用于出租/转租'],
+    array_two: ['请选择', '金融服务（自用）', '视同销售（赠送）', '购进/租入有形动产用于出租/转租','购进/租入不动产用于出租/转租'],
     array_three: ['请选择', "3%", '6%','11%', '17%'],
     array_four: ['请选择','么么哒', '么么', '你最美'],
     index_one:0,
@@ -86,7 +86,7 @@ Page({
 
     twotitle_input_price_value: "",
     twotitle_array_one: ['请选择', '增值税专用发票', '增值税普通发票', '其他'],
-    twotitle_array_two: ['请选择', '金融服务（营业用）', '视同销售', '购进/租入有形动产用于出租/转租', '购进/租入不动产用于出租/转租'],
+    twotitle_array_two: ['请选择', '金融服务（自用）', '视同销售（赠送）', '购进/租入有形动产用于出租/转租', '购进/租入不动产用于出租/转租'],
     twotitle_array_three: ['请选择', "3%", '6%', '11%', '17%'],
     twotitle_array_four: ['请选择', '么么哒', '么么', '你最美'],
     twotitle_index_one: 0,
@@ -104,7 +104,7 @@ Page({
 
     threetitle_input_price_value: "",
     threetitle_array_one: ['请选择', '增值税专用发票', '增值税普通发票', '其他'],
-    threetitle_array_two: ['请选择', '金融服务（营业用）', '视同销售', '购进/租入有形动产用于出租/转租', '购进/租入不动产用于出租/转租'],
+    threetitle_array_two: ['请选择', '金融服务（自用）', '视同销售（赠送）', '购进/租入有形动产用于出租/转租', '购进/租入不动产用于出租/转租'],
     threetitle_array_three: ['请选择', "3%", '6%', '11%', '17%'],
     threetitle_array_four: ['请选择', '么么哒', '么么', '你最美'],
     threetitle_index_one: 0,
@@ -312,11 +312,11 @@ Page({
     
     //获取条件对应的文本，方便显示
     if (condition_value2 == 1) {
-      condition_text_value2 = "金融服务（营业用）"
+      condition_text_value2 = "金融服务（自用）"
       console.log(condition_text_value1);
     }
     else if (condition_value2 == 2){
-      condition_text_value2 = "视同销售"
+      condition_text_value2 = "视同销售（赠送）"
       console.log(condition_text_value2);
     }
     else if (condition_value2 == 3) {
@@ -603,11 +603,11 @@ Page({
 
     //获取条件对应的文本，方便显示
     if (twotitle_condition_value2 == 1) {
-      twotitle_condition_text_value2 = "金融服务（营业用）"
+      twotitle_condition_text_value2 = "金融服务（自用）"
       console.log(twotitle_condition_text_value1);
     }
     else if (twotitle_condition_value2 == 2) {
-      twotitle_condition_text_value2 = "视同销售"
+      twotitle_condition_text_value2 = "视同销售（赠送）"
       console.log(twotitle_condition_text_value2);
     }
     else if (twotitle_condition_value2 == 3) {
@@ -859,11 +859,11 @@ Page({
 
     //获取条件对应的文本，方便显示
     if (threetitle_condition_value2 == 1) {
-      threetitle_condition_text_value2 = "金融服务（营业用）"
+      threetitle_condition_text_value2 = "金融服务（自用）"
       console.log(threetitle_condition_text_value1);
     }
     else if (threetitle_condition_value2 == 2) {
-      threetitle_condition_text_value2 = "视同销售"
+      threetitle_condition_text_value2 = "视同销售（赠送）"
       console.log(threetitle_condition_text_value2);
     }
     else if (threetitle_condition_value2 == 3) {
