@@ -129,7 +129,7 @@ Page({
     })
 
     return {
-      title: '飞燕比价助手',
+      title: '成本比较',
       desc: '货物、服务采购中不同价格、发票类型、用途、税率之下的成本比较小助手',
       path: 'pages/index/index'//'/page/user?id=123'
     }
