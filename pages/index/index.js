@@ -528,7 +528,7 @@ Page({
       console.log(twotitle_condition_text_value1);
     } else if (twotitle_condition_value1 == 2) {
       twotitle_condition_text_value1 = "普票"
-      twotitle_console.log(twotitle_condition_text_value1);
+      console.log(twotitle_condition_text_value1);
     } else {
       twotitle_condition_text_value1 = "其他"
       console.log(twotitle_condition_text_value1);
@@ -544,6 +544,7 @@ Page({
       twotitle_condition_text_value3 = '无';
     }
     else {
+      console.log("b的条件" + twotitle_condition_value2)
       if (twotitle_condition_value2 == 1) {
         this.setData({
           twotitle_index_three: 0,
@@ -817,7 +818,7 @@ Page({
       console.log(threetitle_condition_text_value1);
     } else if (threetitle_condition_value1 == 2) {
       threetitle_condition_text_value1 = "普票"
-      threetitle_console.log(threetitle_condition_text_value1);
+      console.log(threetitle_condition_text_value1);
     } else {
       threetitle_condition_text_value1 = "其他"
       console.log(threetitle_condition_text_value1);
