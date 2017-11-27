@@ -231,7 +231,6 @@ Page({
       }
     }
     condition_value3 = 0;//由于重新布局列表，需要给赋予一个初始值，否则会是上次选中的值
-
   },
 
 
@@ -1064,20 +1063,10 @@ Page({
         result_compute_vlue = -1
       }
       else if (condition_value2 == 2){
-        if (condition_value3 == 0) {
-          result_compute_vlue = -1
-        }
-        else{
-          result_compute_vlue = Math.round(input_X / 1.17 * 1.34 * 100) / 100;
-        }
+        result_compute_vlue = Math.round(input_X / 1.17 * 1.34 * 100) / 100;
       }
       else{
-        if (condition_value3 == 0) {
-          result_compute_vlue = -1
-        }
-        else {
-          result_compute_vlue = input_X;
-        }
+        result_compute_vlue = input_X;
       }
     } 
     else if (condition_value1==0){
@@ -1214,20 +1203,10 @@ Page({
         twotitle_result_compute_vlue = -1
       }
       else if (twotitle_condition_value2 == 2) {
-        if (twotitle_condition_value3 == 0) {
-          twotitle_result_compute_vlue = -1
-        }
-        else {
-          twotitle_result_compute_vlue = Math.round(twotitle_input_X / 1.17 * 1.34 * 100) / 100;
-        }
+        twotitle_result_compute_vlue = Math.round(twotitle_input_X / 1.17 * 1.34 * 100) / 100;
       }
       else {
-        if (twotitle_condition_value3 == 0) {
-          twotitle_result_compute_vlue = -1
-        }
-        else {
-          twotitle_result_compute_vlue = twotitle_input_X;
-        }
+        twotitle_result_compute_vlue = twotitle_input_X;
       }
     }
     else if (twotitle_condition_value1 == 0) {
@@ -1366,20 +1345,10 @@ Page({
         threetitle_result_compute_vlue = -1
       }
       else if (threetitle_condition_value2 == 2) {
-        if (threetitle_condition_value3 == 0) {
-          threetitle_result_compute_vlue = -1
-        }
-        else {
-          threetitle_result_compute_vlue = Math.round(threetitle_input_X / 1.17 * 1.34 * 100) / 100;
-        }
+        threetitle_result_compute_vlue = Math.round(threetitle_input_X / 1.17 * 1.34 * 100) / 100;
       }
       else {
-        if (threetitle_condition_value3 == 0) {
-          threetitle_result_compute_vlue = -1
-        }
-        else {
-          threetitle_result_compute_vlue = threetitle_input_X;
-        }
+        threetitle_result_compute_vlue = threetitle_input_X;
       }
     }
     else if (threetitle_condition_value1 == 0) {
@@ -1397,52 +1366,66 @@ Page({
 
 
 
-    console.log(result_compute_vlue + ";" + twotitle_result_compute_vlue + ";" + threetitle_result_compute_vlue);
+    console.log("比较之前三个结果"+result_compute_vlue + ";" + twotitle_result_compute_vlue + ";" + threetitle_result_compute_vlue);
     // 比较A B C三个商品的大小
     if (result_compute_vlue > 0 && twotitle_result_compute_vlue > 0&& threetitle_result_compute_vlue>0){
       if (result_compute_vlue > twotitle_result_compute_vlue && twotitle_result_compute_vlue > threetitle_result_compute_vlue) {
         result_max = threetitle_result_compute_vlue;
         result_value = "C商品，价格为" + result_max + "元";
+        console.log("比较类型是A>B>C");
       }
       else if (result_compute_vlue > twotitle_result_compute_vlue && twotitle_result_compute_vlue == threetitle_result_compute_vlue) {
         result_max = threetitle_result_compute_vlue;
         result_value = "B和C商品，价格为" + result_max + "元";
+        console.log("比较类型是A>B=C");
       }
       else if (result_compute_vlue > twotitle_result_compute_vlue && threetitle_result_compute_vlue > twotitle_result_compute_vlue) {
         result_max = twotitle_result_compute_vlue;
         result_value = "B商品，价格为" + result_max + "元";
+        console.log("比较类型是A>B,C>B");
       }
       else if (result_compute_vlue == twotitle_result_compute_vlue && threetitle_result_compute_vlue < twotitle_result_compute_vlue) {
         result_max = threetitle_result_compute_vlue;
         result_value = "C商品，价格为" + result_max + "元";
+        console.log("比较类型是A=B>C");
       }
       else if (result_compute_vlue == twotitle_result_compute_vlue && threetitle_result_compute_vlue == twotitle_result_compute_vlue) {
         result_max = result_compute_vlue;
         result_value = "A、B和C商品，价格为" + result_max + "元";
+        console.log("比较类型是A=B=C");
       }
       else if (result_compute_vlue == twotitle_result_compute_vlue && threetitle_result_compute_vlue > twotitle_result_compute_vlue) {
         result_max = twotitle_result_compute_vlue;
         result_value = "A和B商品，价格为" + result_max + "元";
+        console.log("比较类型是A=B<C");
       }
-      else if (result_compute_vlue < twotitle_result_compute_vlue && threetitle_result_compute_vlue < twotitle_result_compute_vlue && result_compute_vlue > threetitle_result_compute_vlue) {
+      else if (result_compute_vlue < twotitle_result_compute_vlue && threetitle_result_compute_vlue < twotitle_result_compute_vlue && result_compute_vlue >threetitle_result_compute_vlue) {
         result_max = threetitle_result_compute_vlue;
         result_value = "C商品，价格为" + result_max + "元";
+        console.log("比较类型是A<B,C<B,A>C");
       }
       else if (result_compute_vlue < twotitle_result_compute_vlue && threetitle_result_compute_vlue < twotitle_result_compute_vlue && result_compute_vlue == threetitle_result_compute_vlue) {
         result_max = threetitle_result_compute_vlue;
         result_value = "A和C商品，价格为" + result_max + "元";
+        console.log("比较类型是A<B,C<B,A=C");
       }
       else if (result_compute_vlue < twotitle_result_compute_vlue && threetitle_result_compute_vlue < twotitle_result_compute_vlue && result_compute_vlue < threetitle_result_compute_vlue) {
         result_max = result_compute_vlue;
         result_value = "A商品，价格为" + result_max + "元";
+        console.log("比较类型是A<B,C<B,A<C");
       }
       else if (result_compute_vlue < twotitle_result_compute_vlue && threetitle_result_compute_vlue == twotitle_result_compute_vlue) {
         result_max = result_compute_vlue;
         result_value = "A商品，价格为" + result_max + "元";
+        console.log("比较类型是A<B,C==B");
       }
       else if (result_compute_vlue < twotitle_result_compute_vlue && threetitle_result_compute_vlue > twotitle_result_compute_vlue) {
+        if (threetitle_result_compute_vlue > twotitle_result_compute_vlue){
+          console.log("比较类型是A<B,C>B" + "输出结果abc分别为" + result_compute_vlue + ";" + twotitle_result_compute_vlue + ";" + threetitle_result_compute_vlue + ";");
+        }
         result_max = result_compute_vlue;
         result_value = "A商品，价格为" + result_max + "元";
+        console.log("比较类型是A<B,C>B" + "输出结果abc分别为" + result_compute_vlue + ";" + twotitle_result_compute_vlue + ";" + threetitle_result_compute_vlue+";");
       } 
       result_ABC_price = "A商品" + result_compute_vlue + "；" + "B商品" + twotitle_result_compute_vlue + "；" + "C商品" + threetitle_result_compute_vlue
     }
