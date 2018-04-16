@@ -14,10 +14,10 @@ var condition_value3_A=0;
 var condition_text_valueA = "";
 var condition_value3_B=0;
 var condition_text_valueB = "";
-var condition_array_one = ['3%', '6%', '11%', '17%'];
-var condition_array_two = ['3%', '11%', '17%'];
-var condition_array_three = ['5%', '11%'];
-var condition_array_four = ['3%',"5%", '6%', '11%', '17%'];
+var condition_array_one = ['3%', '6%', '10%', '16%'];
+var condition_array_two = ['3%', '10%', '16%'];
+var condition_array_three = ['5%', '10%'];
+var condition_array_four = ['3%',"5%", '6%', '10%', '16%'];
 var result_value;
 var result_compute_vlue = "";
 var util = require('../../utils/util.js')
@@ -38,10 +38,10 @@ var twotitle_condition_value3_A=0;
 var twotitle_condition_text_valueA = "";
 var twotitle_condition_value3_B=0;
 var twotitle_condition_text_valueB = "";
-var twotitle_condition_array_one = ['3%', '6%', '11%', '17%'];
-var twotitle_condition_array_two = ['3%', '11%', '17%'];
-var twotitle_condition_array_three = ['5%', '11%'];
-var twotitle_condition_array_four = ['3%', "5%", '6%', '11%', '17%'];
+var twotitle_condition_array_one = ['3%', '6%', '10%', '16%'];
+var twotitle_condition_array_two = ['3%', '10%', '16%'];
+var twotitle_condition_array_three = ['5%', '10%'];
+var twotitle_condition_array_four = ['3%', "5%", '6%', '10%', '16%'];
 var twotitle_result_value;
 var twotitle_result_compute_vlue = "";
 
@@ -59,10 +59,10 @@ var threetitle_condition_value3_A=0;
 var threetitle_condition_text_valueA = "";
 var threetitle_condition_value3_B=0;
 var threetitle_condition_text_valueB = "";
-var threetitle_condition_array_one = ['3%', '6%', '11%', '17%'];
-var threetitle_condition_array_two = ['3%', '11%', '17%'];
-var threetitle_condition_array_three = ['5%', '11%'];
-var threetitle_condition_array_four = ['3%', "5%", '6%', '11%', '17%'];
+var threetitle_condition_array_one = ['3%', '6%', '10%', '16%'];
+var threetitle_condition_array_two = ['3%', '10%', '16%'];
+var threetitle_condition_array_three = ['5%', '10%'];
+var threetitle_condition_array_four = ['3%', "5%", '6%', '10%', '16%'];
 var threetitle_result_value;
 var threetitle_result_compute_vlue = "";
 
@@ -71,7 +71,7 @@ Page({
     input_price_value:"",
     array_one: ['请选择', '增值税专用发票', '增值税普通发票','其他'],
     array_two: ['请选择', '金融服务（自用）', '视同销售（赠送）', '购进/租入有形动产用于出租/转租','购进/租入不动产用于出租/转租'],
-    array_three: ['请选择', "3%", '6%','11%', '17%'],
+    array_three: ['请选择', "3%", '6%','10%', '16%'],
     array_four: ['请选择','么么哒', '么么', '你最美'],
     index_one:0,
     index_two: 0,
@@ -87,7 +87,7 @@ Page({
     twotitle_input_price_value: "",
     twotitle_array_one: ['请选择', '增值税专用发票', '增值税普通发票', '其他'],
     twotitle_array_two: ['请选择', '金融服务（自用）', '视同销售（赠送）', '购进/租入有形动产用于出租/转租', '购进/租入不动产用于出租/转租'],
-    twotitle_array_three: ['请选择', "3%", '6%', '11%', '17%'],
+    twotitle_array_three: ['请选择', "3%", '6%', '10%', '16%'],
     twotitle_array_four: ['请选择', '么么哒', '么么', '你最美'],
     twotitle_index_one: 0,
     twotitle_index_two: 0,
@@ -105,7 +105,7 @@ Page({
     threetitle_input_price_value: "",
     threetitle_array_one: ['请选择', '增值税专用发票', '增值税普通发票', '其他'],
     threetitle_array_two: ['请选择', '金融服务（自用）', '视同销售（赠送）', '购进/租入有形动产用于出租/转租', '购进/租入不动产用于出租/转租'],
-    threetitle_array_three: ['请选择', "3%", '6%', '11%', '17%'],
+    threetitle_array_three: ['请选择', "3%", '6%', '10%', '16%'],
     threetitle_array_four: ['请选择', '么么哒', '么么', '你最美'],
     threetitle_index_one: 0,
     threetitle_index_two: 0,
@@ -224,25 +224,25 @@ Page({
       if (condition_value2 == 1) {
         this.setData({
           index_three: 0,
-          array_three: ['请选择', '3%','5%', '6%', '11%', '17%'],
+          array_three: ['请选择', '3%','5%', '6%', '10%', '16%'],
         })
       }
       else if(condition_value2==2){
         this.setData({
           index_three: 0,
-          array_three: ['请选择', '3%', '6%', '11%', '17%'],
+          array_three: ['请选择', '3%', '6%', '10%', '16%'],
         })
       }
       else if (condition_value2 == 3) {
         this.setData({
           index_three: 0,
-          array_three: ['请选择', '3%', '11%', '17%'],
+          array_three: ['请选择', '3%', '10%', '16%'],
         })
       }
       else if (condition_value2 == 4) {
         this.setData({
           index_three: 0,
-          array_three: ['请选择', '5%', '11%'],
+          array_three: ['请选择', '5%', '10%'],
         })
       }
       condition_value3 = 0;//由于税率重新布局列表，需要给赋予一个初始值，否则会是上次选中的值
@@ -266,25 +266,25 @@ Page({
       if (e.detail.value == 1) {
         this.setData({
           index_three: 0,
-          array_three: ['请选择', '3%', '5%','6%', '11%', '17%'],
+          array_three: ['请选择', '3%', '5%','6%', '10%', '16%'],
         })
       }
       else if (e.detail.value == 2){
         this.setData({
           index_three: 0,
-          array_three: ['请选择', '3%', '6%', '11%', '17%'],
+          array_three: ['请选择', '3%', '6%', '10%', '16%'],
         })
       }
       else if (e.detail.value == 3) {
         this.setData({
           index_three: 0,
-          array_three: ['请选择', '3%', '11%', '17%'],
+          array_three: ['请选择', '3%', '10%', '16%'],
         })
       }
       else if (e.detail.value == 4) {
         this.setData({
           index_three: 0,
-          array_three: ['请选择', '5%', '11%'],
+          array_three: ['请选择', '5%', '10%'],
         })
       }
       condition_value3 = 0;//由于重新布局列表，需要给赋予一个初始值，否则会是上次选中的值
@@ -548,25 +548,25 @@ Page({
       if (twotitle_condition_value2 == 1) {
         this.setData({
           twotitle_index_three: 0,
-          twotitle_array_three: ['请选择', '3%', '5%', '6%', '11%', '17%'],
+          twotitle_array_three: ['请选择', '3%', '5%', '6%', '10%', '16%'],
         })
       }
       else if (twotitle_condition_value2 == 2) {
         this.setData({
           twotitle_index_three: 0,
-          twotitle_array_three: ['请选择', '3%', '6%', '11%', '17%'],
+          twotitle_array_three: ['请选择', '3%', '6%', '10%', '16%'],
         })
       }
       else if (twotitle_condition_value2 == 3) {
         this.setData({
           twotitle_index_three: 0,
-          twotitle_array_three: ['请选择', '3%', '11%', '17%'],
+          twotitle_array_three: ['请选择', '3%', '10%', '16%'],
         })
       }
       else if (twotitle_condition_value2 == 4) {
         this.setData({
           twotitle_index_three: 0,
-          twotitle_array_three: ['请选择', '5%', '11%'],
+          twotitle_array_three: ['请选择', '5%', '10%'],
         })
       }
       twotitle_condition_value3 = 0;//由于重新布局列表，需要给赋予一个初始值，否则会是上次选中的值
@@ -590,25 +590,25 @@ Page({
       if (e.detail.value == 1) {
         this.setData({
           twotitle_index_three: 0,
-          twotitle_array_three: ['请选择', '3%', '5%', '6%', '11%', '17%'],
+          twotitle_array_three: ['请选择', '3%', '5%', '6%', '10%', '16%'],
         })
       }
       else if (e.detail.value == 2) {
         this.setData({
           twotitle_index_three: 0,
-          twotitle_array_three: ['请选择', '3%', '6%', '11%', '17%'],
+          twotitle_array_three: ['请选择', '3%', '6%', '10%', '16%'],
         })
       }
       else if (e.detail.value == 3) {
         this.setData({
           twotitle_index_three: 0,
-          twotitle_array_three: ['请选择', '3%', '11%', '17%'],
+          twotitle_array_three: ['请选择', '3%', '10%', '16%'],
         })
       }
       else if (e.detail.value == 4) {
         this.setData({
           twotitle_index_three: 0,
-          twotitle_array_three: ['请选择', '5%', '11%'],
+          twotitle_array_three: ['请选择', '5%', '10%'],
         })
       }
       twotitle_condition_value3 = 0;//由于重新布局列表，需要给赋予一个初始值，否则会是上次选中的值
@@ -837,25 +837,25 @@ Page({
       if (threetitle_condition_value2 == 1) {
         this.setData({
           threetitle_index_three: 0,
-          threetitle_array_three: ['请选择', '3%', '5%', '6%', '11%', '17%'],
+          threetitle_array_three: ['请选择', '3%', '5%', '6%', '10%', '16%'],
         })
       }
       else if (threetitle_condition_value2 == 2) {
         this.setData({
           threetitle_index_three: 0,
-          threetitle_array_three: ['请选择', '3%', '6%', '11%', '17%'],
+          threetitle_array_three: ['请选择', '3%', '6%', '10%', '16%'],
         })
       }
       else if (threetitle_condition_value2 == 3) {
         this.setData({
           threetitle_index_three: 0,
-          threetitle_array_three: ['请选择', '3%', '11%', '17%'],
+          threetitle_array_three: ['请选择', '3%', '10%', '16%'],
         })
       }
       else if (threetitle_condition_value2 == 4) {
         this.setData({
           threetitle_index_three: 0,
-          threetitle_array_three: ['请选择', '5%', '11%'],
+          threetitle_array_three: ['请选择', '5%', '10%'],
         })
       }
       threetitle_condition_value3 = 0;//由于重新布局列表，需要给赋予一个初始值，否则会是上次选中的值
@@ -880,25 +880,25 @@ Page({
       if (e.detail.value == 1) {
         this.setData({
           threetitle_index_three: 0,
-          threetitle_array_three: ['请选择', '3%', '5%', '6%', '11%', '17%'],
+          threetitle_array_three: ['请选择', '3%', '5%', '6%', '10%', '16%'],
         })
       }
       else if (e.detail.value == 2) {
         this.setData({
           threetitle_index_three: 0,
-          threetitle_array_three: ['请选择', '3%', '6%', '11%', '17%'],
+          threetitle_array_three: ['请选择', '3%', '6%', '10%', '16%'],
         })
       }
       else if (e.detail.value == 3) {
         this.setData({
           threetitle_index_three: 0,
-          threetitle_array_three: ['请选择', '3%', '11%', '17%'],
+          threetitle_array_three: ['请选择', '3%', '10%', '16%'],
         })
       }
       else if (e.detail.value == 4) {
         this.setData({
           threetitle_index_three: 0,
-          threetitle_array_three: ['请选择', '5%', '11%'],
+          threetitle_array_three: ['请选择', '5%', '10%'],
         })
       }
       threetitle_condition_value3 = 0;//由于重新布局列表，需要给赋予一个初始值，否则会是上次选中的值
@@ -1062,7 +1062,7 @@ Page({
            result_compute_vlue = -1
          }
          else if (condition_value3 == 1) {
-           result_compute_vlue = Math.round(input_X / 1.03 * 1.17 * 100) / 100
+           result_compute_vlue = Math.round(input_X / 1.03 * 1.16 * 100) / 100
          }
          else {
            result_compute_vlue = parseFloat(input_X) 
@@ -1077,10 +1077,10 @@ Page({
            result_compute_vlue = Math.round((input_X - input_X / 1.03 * 0.03) * 100) / 100
          }
          else if (condition_value3 == 2) {
-           result_compute_vlue = Math.round((input_X - input_X / 1.11 * 0.11) * 100) / 100
+           result_compute_vlue = Math.round((input_X - input_X / 1.10 * 0.10) * 100) / 100
          }
          else {
-           result_compute_vlue = Math.round((input_X - input_X / 1.17 * 0.17) * 100) / 100
+           result_compute_vlue = Math.round((input_X - input_X / 1.16 * 0.16) * 100) / 100
          }
        }
        else if (condition_value2 == 4) {
@@ -1098,7 +1098,7 @@ Page({
            if (condition_value3_A == 0) {
              result_compute_vlue = -1;
            } else {
-             result_compute_vlue = Math.round((input_X - condition_value3_B / condition_value3_A * input_X / 1.11 * 0.11) * 100) / 100;
+             result_compute_vlue = Math.round((input_X - condition_value3_B / condition_value3_A * input_X / 1.10 * 0.10) * 100) / 100;
            }
          }
        } 
@@ -1132,11 +1132,11 @@ Page({
 
         }
         else if (condition_value3 == 3) {
-          result_compute_vlue = Math.round(input_X / 1.11 * 1.22*100)/100;
+          result_compute_vlue = Math.round(input_X / 1.10 * 1.22*100)/100;
 
         }
         else{
-          result_compute_vlue = Math.round(input_X / 1.17 * 1.34 * 100) / 100;
+          result_compute_vlue = Math.round(input_X / 1.16 * 1.34 * 100) / 100;
 
         }
       } 
@@ -1163,7 +1163,7 @@ Page({
         result_compute_vlue = -1
       }
       else if (condition_value2 == 2){
-        result_compute_vlue = Math.round(input_X / 1.17 * 1.34 * 100) / 100;
+        result_compute_vlue = Math.round(input_X / 1.16 * 1.34 * 100) / 100;
       }
       else{
         result_compute_vlue = parseFloat(input_X);
@@ -1201,7 +1201,7 @@ Page({
           twotitle_result_compute_vlue = -1
         }
         else if (twotitle_condition_value3 == 1) {
-          twotitle_result_compute_vlue = Math.round(twotitle_input_X / 1.03 * 1.17 * 100) / 100
+          twotitle_result_compute_vlue = Math.round(twotitle_input_X / 1.03 * 1.16 * 100) / 100
         }
         else {
           twotitle_result_compute_vlue = parseFloat(twotitle_input_X)
@@ -1216,10 +1216,10 @@ Page({
           twotitle_result_compute_vlue = Math.round((twotitle_input_X - twotitle_input_X / 1.03 * 0.03) * 100) / 100
         }
         else if (twotitle_condition_value3 == 2) {
-          twotitle_result_compute_vlue = Math.round((twotitle_input_X - twotitle_input_X / 1.11 * 0.11) * 100) / 100
+          twotitle_result_compute_vlue = Math.round((twotitle_input_X - twotitle_input_X / 1.10 * 0.10) * 100) / 100
         }
         else {
-          twotitle_result_compute_vlue = Math.round((twotitle_input_X - twotitle_input_X / 1.17 * 0.17) * 100) / 100
+          twotitle_result_compute_vlue = Math.round((twotitle_input_X - twotitle_input_X / 1.16 * 0.16) * 100) / 100
         }
       }
       else if (twotitle_condition_value2 == 4) {
@@ -1237,7 +1237,7 @@ Page({
           if (twotitle_condition_value3_A == 0) {
             twotitle_result_compute_vlue = -1;
           } else {
-          twotitle_result_compute_vlue = Math.round((twotitle_input_X - twotitle_condition_value3_B / twotitle_condition_value3_A * twotitle_input_X / 1.11 * 0.11) * 100) / 100
+          twotitle_result_compute_vlue = Math.round((twotitle_input_X - twotitle_condition_value3_B / twotitle_condition_value3_A * twotitle_input_X / 1.10 * 0.10) * 100) / 100
           }
         }
       } else if (twotitle_condition_value2 == 0) {
@@ -1270,11 +1270,11 @@ Page({
 
         }
         else if (twotitle_condition_value3 == 3) {
-          twotitle_result_compute_vlue = Math.round(twotitle_input_X / 1.11 * 1.22*100)/100;
+          twotitle_result_compute_vlue = Math.round(twotitle_input_X / 1.10 * 1.22*100)/100;
 
         }
         else {
-          twotitle_result_compute_vlue = Math.round(twotitle_input_X / 1.17 * 1.34 * 100) / 100;
+          twotitle_result_compute_vlue = Math.round(twotitle_input_X / 1.16 * 1.34 * 100) / 100;
 
         }
       }
@@ -1301,7 +1301,7 @@ Page({
         twotitle_result_compute_vlue = -1
       }
       else if (twotitle_condition_value2 == 2) {
-        twotitle_result_compute_vlue = Math.round(twotitle_input_X / 1.17 * 1.34 * 100) / 100;
+        twotitle_result_compute_vlue = Math.round(twotitle_input_X / 1.16 * 1.34 * 100) / 100;
       }
       else {
         twotitle_result_compute_vlue = parseFloat(twotitle_input_X);
@@ -1341,7 +1341,7 @@ Page({
           threetitle_result_compute_vlue = -1
         }
         else if (threetitle_condition_value3 == 1) {
-          threetitle_result_compute_vlue = Math.round(threetitle_input_X / 1.03 * 1.17 * 100) / 100
+          threetitle_result_compute_vlue = Math.round(threetitle_input_X / 1.03 * 1.16 * 100) / 100
         }
         else {
           threetitle_result_compute_vlue = parseFloat(threetitle_input_X)
@@ -1356,10 +1356,10 @@ Page({
           threetitle_result_compute_vlue = Math.round((threetitle_input_X - threetitle_input_X / 1.03 * 0.03) * 100) / 100
         }
         else if (threetitle_condition_value3 == 2) {
-          threetitle_result_compute_vlue = Math.round((threetitle_input_X - threetitle_input_X / 1.11 * 0.11) * 100) / 100
+          threetitle_result_compute_vlue = Math.round((threetitle_input_X - threetitle_input_X / 1.10 * 0.10) * 100) / 100
         }
         else {
-          threetitle_result_compute_vlue = Math.round((threetitle_input_X - threetitle_input_X / 1.17 * 0.17) * 100) / 100
+          threetitle_result_compute_vlue = Math.round((threetitle_input_X - threetitle_input_X / 1.16 * 0.16) * 100) / 100
         }
       }
       else if (threetitle_condition_value2 == 4) {
@@ -1377,7 +1377,7 @@ Page({
           if (threetitle_condition_value3_A == 0) {
             threetitle_result_compute_vlue = -1;
           } else {
-          threetitle_result_compute_vlue = Math.round((threetitle_input_X - threetitle_condition_value3_B / threetitle_condition_value3_A * threetitle_input_X / 1.11 * 0.11) * 100) / 100
+          threetitle_result_compute_vlue = Math.round((threetitle_input_X - threetitle_condition_value3_B / threetitle_condition_value3_A * threetitle_input_X / 1.10 * 0.10) * 100) / 100
           }
         }
       } else if (threetitle_condition_value2 == 0) {
@@ -1410,11 +1410,11 @@ Page({
 
         }
         else if (threetitle_condition_value3 == 3) {
-          threetitle_result_compute_vlue = Math.round(threetitle_input_X / 1.11 * 1.22*100)/100;
+          threetitle_result_compute_vlue = Math.round(threetitle_input_X / 1.10 * 1.22*100)/100;
 
         }
         else {
-          threetitle_result_compute_vlue = Math.round(threetitle_input_X / 1.17 * 1.34 * 100) / 100;
+          threetitle_result_compute_vlue = Math.round(threetitle_input_X / 1.16 * 1.34 * 100) / 100;
 
         }
       }
@@ -1441,7 +1441,7 @@ Page({
         threetitle_result_compute_vlue = -1
       }
       else if (threetitle_condition_value2 == 2) {
-        threetitle_result_compute_vlue = Math.round(threetitle_input_X / 1.17 * 1.34 * 100) / 100;
+        threetitle_result_compute_vlue = Math.round(threetitle_input_X / 1.16 * 1.34 * 100) / 100;
       }
       else {
         threetitle_result_compute_vlue = parseFloat(threetitle_input_X);
@@ -1629,7 +1629,7 @@ Page({
       input_price_value: "",
       index_one: 0,
       index_two: 0,
-      array_three: ['请选择', '3%', '5%','6%', '11%', '17%'],//由于增加需求，金融服务添加了5%这个税率
+      array_three: ['请选择', '3%', '5%','6%', '10%', '16%'],//由于增加需求，金融服务添加了5%这个税率
       index_three: 0,
       input_one_price_value:"",
       input_two_price_value: "",
@@ -1660,7 +1660,7 @@ Page({
       twotitle_input_price_value: "",
       twotitle_index_one: 0,
       twotitle_index_two: 0,
-      twotitle_array_three: ['请选择', '3%', '5%', '6%', '11%', '17%'],//由于增加需求，金融服务添加了5%这个税率
+      twotitle_array_three: ['请选择', '3%', '5%', '6%', '10%', '16%'],//由于增加需求，金融服务添加了5%这个税率
       twotitle_index_three: 0,
       twotitle_input_one_price_value: "",
       twotitle_input_two_price_value: "",
@@ -1689,7 +1689,7 @@ Page({
       threetitle_input_price_value: "",
       threetitle_index_one: 0,
       threetitle_index_two: 0,
-      threetitle_array_three: ['请选择', '3%', '5%', '6%', '11%', '17%'],//由于增加需求，金融服务添加了5%这个税率
+      threetitle_array_three: ['请选择', '3%', '5%', '6%', '10%', '16%'],//由于增加需求，金融服务添加了5%这个税率
       threetitle_index_three: 0,
       threetitle_input_one_price_value: "",
       threetitle_input_two_price_value: "",
@@ -1722,7 +1722,7 @@ Page({
       input_price_value: "",
       index_one: 0,
       index_two: 0,
-      array_three: ['请选择', '3%', '5%', '6%', '11%', '17%'],//由于增加需求，金融服务添加了5%这个税率
+      array_three: ['请选择', '3%', '5%', '6%', '10%', '16%'],//由于增加需求，金融服务添加了5%这个税率
       index_three: 0,
       input_one_price_value: "",
       input_two_price_value: "",
@@ -1757,7 +1757,7 @@ Page({
       twotitle_input_price_value: "",
       twotitle_index_one: 0,
       twotitle_index_two: 0,
-      twotitle_array_three: ['请选择', '3%', '5%', '6%', '11%', '17%'],//由于增加需求，金融服务添加了5%这个税率
+      twotitle_array_three: ['请选择', '3%', '5%', '6%', '10%', '16%'],//由于增加需求，金融服务添加了5%这个税率
       twotitle_index_three: 0,
       twotitle_input_one_price_value: "",
       twotitle_input_two_price_value: "",
@@ -1792,7 +1792,7 @@ Page({
       threetitle_input_price_value: "",
       threetitle_index_one: 0,
       threetitle_index_two: 0,
-      threetitle_array_three: ['请选择', '3%', '5%', '6%', '11%', '17%'],//由于增加需求，金融服务添加了5%这个税率
+      threetitle_array_three: ['请选择', '3%', '5%', '6%', '10%', '16%'],//由于增加需求，金融服务添加了5%这个税率
       threetitle_index_three: 0,
       threetitle_input_one_price_value: "",
       threetitle_input_two_price_value: "",
