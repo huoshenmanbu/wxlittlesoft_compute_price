@@ -1125,18 +1125,18 @@ Page({
           result_compute_vlue = -1
         } 
         else if (condition_value3 == 1) {
-          result_compute_vlue = Math.round(input_X / 1.03 * 1.2*100)/100;
+          result_compute_vlue = Math.round(input_X / 1.03 * 1.19*100)/100;
         }
         else if (condition_value3 == 2) {
           result_compute_vlue = Math.round(input_X / 1.06 * 1.12*100) / 100;
 
         }
         else if (condition_value3 == 3) {
-          result_compute_vlue = Math.round(input_X / 1.10 * 1.22*100)/100;
+          result_compute_vlue = Math.round(input_X / 1.10 * 1.2*100)/100;
 
         }
         else{
-          result_compute_vlue = Math.round(input_X / 1.16 * 1.34 * 100) / 100;
+          result_compute_vlue = Math.round(input_X / 1.16 * 1.32 * 100) / 100;
 
         }
       } 
@@ -1163,7 +1163,7 @@ Page({
         result_compute_vlue = -1
       }
       else if (condition_value2 == 2){
-        result_compute_vlue = Math.round(input_X / 1.16 * 1.34 * 100) / 100;
+        result_compute_vlue = Math.round(input_X / 1.16 * 1.32 * 100) / 100;
       }
       else{
         result_compute_vlue = parseFloat(input_X);
@@ -1263,18 +1263,18 @@ Page({
           twotitle_result_compute_vlue = -1
         }
         else if (twotitle_condition_value3 == 1) {
-          twotitle_result_compute_vlue = Math.round(twotitle_input_X / 1.03 * 1.2 * 100) / 100;
+          twotitle_result_compute_vlue = Math.round(twotitle_input_X / 1.03 * 1.19 * 100) / 100;
         }
         else if (twotitle_condition_value3 == 2) {
           twotitle_result_compute_vlue = Math.round(twotitle_input_X / 1.06 *1.12* 100) / 100;
 
         }
         else if (twotitle_condition_value3 == 3) {
-          twotitle_result_compute_vlue = Math.round(twotitle_input_X / 1.10 * 1.22*100)/100;
+          twotitle_result_compute_vlue = Math.round(twotitle_input_X / 1.10 * 1.2*100)/100;
 
         }
         else {
-          twotitle_result_compute_vlue = Math.round(twotitle_input_X / 1.16 * 1.34 * 100) / 100;
+          twotitle_result_compute_vlue = Math.round(twotitle_input_X / 1.16 * 1.32 * 100) / 100;
 
         }
       }
@@ -1301,7 +1301,7 @@ Page({
         twotitle_result_compute_vlue = -1
       }
       else if (twotitle_condition_value2 == 2) {
-        twotitle_result_compute_vlue = Math.round(twotitle_input_X / 1.16 * 1.34 * 100) / 100;
+        twotitle_result_compute_vlue = Math.round(twotitle_input_X / 1.16 * 1.32 * 100) / 100;
       }
       else {
         twotitle_result_compute_vlue = parseFloat(twotitle_input_X);
@@ -1403,18 +1403,18 @@ Page({
           threetitle_result_compute_vlue = -1
         }
         else if (threetitle_condition_value3 == 1) {
-          threetitle_result_compute_vlue = Math.round(threetitle_input_X / 1.03 * 1.2 * 100) / 100;
+          threetitle_result_compute_vlue = Math.round(threetitle_input_X / 1.03 * 1.19 * 100) / 100;
         }
         else if (threetitle_condition_value3 == 2) {
           threetitle_result_compute_vlue = Math.round(threetitle_input_X / 1.06 *1.12* 100) / 100;
 
         }
         else if (threetitle_condition_value3 == 3) {
-          threetitle_result_compute_vlue = Math.round(threetitle_input_X / 1.10 * 1.22*100)/100;
+          threetitle_result_compute_vlue = Math.round(threetitle_input_X / 1.10 * 1.2*100)/100;
 
         }
         else {
-          threetitle_result_compute_vlue = Math.round(threetitle_input_X / 1.16 * 1.34 * 100) / 100;
+          threetitle_result_compute_vlue = Math.round(threetitle_input_X / 1.16 * 1.32 * 100) / 100;
 
         }
       }
@@ -1441,7 +1441,7 @@ Page({
         threetitle_result_compute_vlue = -1
       }
       else if (threetitle_condition_value2 == 2) {
-        threetitle_result_compute_vlue = Math.round(threetitle_input_X / 1.16 * 1.34 * 100) / 100;
+        threetitle_result_compute_vlue = Math.round(threetitle_input_X / 1.16 * 1.32 * 100) / 100;
       }
       else {
         threetitle_result_compute_vlue = parseFloat(threetitle_input_X);
