@@ -1,6 +1,7 @@
 //index.js
 //获取应用实例
 var app = getApp();
+
 var input_X=0;
 var condition_value1=0;
 var condition_text_value1 = "";
